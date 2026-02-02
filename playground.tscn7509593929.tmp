@@ -274,13 +274,6 @@ region = Rect2(32, 0, 32, 32)
 atlas = ExtResource("5_o00ia")
 region = Rect2(352, 0, 32, 32)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pi42a"]
-load_path = "res://.godot/imported/items_transparent_dropshadow.png-b8942f16d5dcfac610d1c4379faf7577.ctex"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_a5gkh"]
-atlas = SubResource("CompressedTexture2D_pi42a")
-region = Rect2(224, 256, 32, 32)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4bqqs"]
 content_margin_left = 8.0
 content_margin_right = 8.0
@@ -418,21 +411,19 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="RichTextLabel" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/Control3" unique_id=2103867639]
+[node name="Label" type="Label" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/Control3" unique_id=45503390]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = 23.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/default_color = Color(0.50928617, 0.50928617, 0.50928617, 1)
-bbcode_enabled = true
-text = "[b]Instructions[/b]
+theme_override_colors/font_color = Color(0.5649617, 0.5649616, 0.5649616, 1)
+text = "Instructions
 
-[b]Left click[/b] on empty slot to create item.
+Left click on empty slot to create item.
 Costs 1 point.
-[b]Right click[/b] on filled slot to discard.
+Right click on filled slot to discard.
 Discord is free.
 
 Drag items to orders to fullfill them
@@ -1835,53 +1826,19 @@ metadata/_tab_index = 2
 unique_name_in_owner = true
 script = ExtResource("7_ynsuh")
 
-[node name="DragContainer" type="Control" parent="ToolTips" unique_id=1000011651]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(48, 48)
+[node name="Container" type="Control" parent="ToolTips" unique_id=1185836144]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 185.0
-offset_top = 79.0
-offset_right = 233.0
-offset_bottom = 127.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ItemTexture" type="TextureRect" parent="ToolTips/DragContainer" unique_id=1041827577]
-unique_name_in_owner = true
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("AtlasTexture_a5gkh")
-expand_mode = 3
-metadata/_edit_lock_ = true
-
-[node name="TooltipContainer" type="Control" parent="ToolTips" unique_id=1185836144]
-unique_name_in_owner = true
-layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 171.0
-offset_top = 79.0
-offset_right = 171.0
-offset_bottom = 79.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme = SubResource("Theme_ynsuh")
 
-[node name="PanelContainer" type="PanelContainer" parent="ToolTips/TooltipContainer" unique_id=1907243045]
+[node name="PanelContainer" type="PanelContainer" parent="ToolTips/Container" unique_id=1907243045]
 layout_mode = 1
 offset_left = 11.0
 offset_top = 5.0
@@ -1889,7 +1846,7 @@ offset_right = 49.0
 offset_bottom = 22.0
 mouse_filter = 2
 
-[node name="TooltipTitle" type="Label" parent="ToolTips/TooltipContainer/PanelContainer" unique_id=1086550673]
+[node name="TooltipTitle" type="Label" parent="ToolTips/Container/PanelContainer" unique_id=1086550673]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 0

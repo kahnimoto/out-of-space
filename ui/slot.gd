@@ -95,7 +95,7 @@ func debug_pick_random_item() -> void:
 
 
 func _on_mouse_entered() -> void:
-	if not item or item == Items.EMPTY:
+	if not item or item == Items.EMPTY or Game.is_dragging:
 		return
 	Events.tooltip_requested.emit(self, item_name)
 
@@ -103,12 +103,23 @@ func _on_mouse_entered() -> void:
 func _on_mouse_exited() -> void:
 	Events.tooltip_released.emit(self)
 
-
 func _gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseMotion:
+		return
+	#print(self)
 	if event is InputEventMouseButton and (event as InputEventMouseButton).button_index == MOUSE_BUTTON_LEFT:
-		if (event as InputEventMouseButton).is_released():
-			Events.new_item_requested.emit()
-			debug_pick_random_item()
-			Events.tooltip_requested.emit(self, item_name)
+		var mouse_event := event as InputEventMouseButton
+		if mouse_event.button_index == MOUSE_BUTTON_LEFT:
+			if mouse_event.double_click or (mouse_event.shift_pressed and mouse_event.pressed):
+				Events.new_item_requested.emit()
+				debug_pick_random_item()
+				Events.tooltip_requested.emit(self, item_name)
+			elif mouse_event.is_pressed() and item and item != Items.EMPTY:
+				Events.drag_started.emit(item)
+				item = Items.EMPTY
+			elif event.is_released() and Game.is_dragging:
+				item = Game.dragging
+				Events.drag_aborted.emit()
+				
 	elif event is InputEventMouseButton and (event as InputEventMouseButton).button_index == MOUSE_BUTTON_RIGHT:
 		item = Items.EMPTY
