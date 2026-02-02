@@ -6,7 +6,9 @@
 [ext_resource type="Script" uid="uid://bf6jd30w4ob6j" path="res://ui/ui.gd" id="2_v7dth"]
 [ext_resource type="Texture2D" uid="uid://do3dujjujwes5" path="res://resources/textures/inventory_slot_texture.tres" id="2_wt17y"]
 [ext_resource type="Texture2D" uid="uid://dwd50p15er7an" path="res://assets/items_transparent_dropshadow.png" id="5_o00ia"]
+[ext_resource type="Script" uid="uid://cy2po60ndjla8" path="res://ui/ability.gd" id="7_v7dth"]
 [ext_resource type="Script" uid="uid://ca61pwl6g0vse" path="res://tool_tips.gd" id="7_ynsuh"]
+[ext_resource type="Texture2D" uid="uid://c2t5s25qbvegl" path="res://assets/tileset.png" id="8_pi42a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4bqqs"]
 atlas = ExtResource("5_o00ia")
@@ -150,7 +152,7 @@ region = Rect2(352, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j7gj2"]
 atlas = ExtResource("5_o00ia")
-region = Rect2(192, 192, 32, 32)
+region = Rect2(352, 192, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1nsp6"]
 atlas = ExtResource("5_o00ia")
@@ -261,6 +263,14 @@ atlas = ExtResource("5_o00ia")
 region = Rect2(352, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mcv7y"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aifqc"]
+atlas = ExtResource("8_pi42a")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lotv4"]
 atlas = ExtResource("5_o00ia")
 region = Rect2(352, 0, 32, 32)
 
@@ -400,6 +410,28 @@ layout_mode = 2
 [node name="Control3" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer" unique_id=824366243]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/Control3" unique_id=45503390]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.5649617, 0.5649616, 0.5649616, 1)
+text = "Instructions
+
+Left click on empty slot to create item.
+Costs 1 point.
+Right click on filled slot to discard.
+Discord is free.
+
+Drag items to orders to fullfill them
+and earn points.
+
+Earn as much points as possible
+before time or space is out.
+"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer" unique_id=324731215]
 layout_mode = 2
@@ -1753,6 +1785,34 @@ offset_bottom = 32.0
 texture = SubResource("AtlasTexture_mcv7y")
 metadata/_edit_lock_ = true
 
+[node name="Control" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=2128581378]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=2052327146]
+layout_mode = 2
+
+[node name="Ability" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=99769032]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("7_v7dth")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/Ability" unique_id=392079272]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_aifqc")
+metadata/_edit_lock_ = true
+
+[node name="SlotTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/Ability" unique_id=842091499]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_lotv4")
+metadata/_edit_lock_ = true
+
 [node name="Control2" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer" unique_id=944096990]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1780,8 +1840,10 @@ theme = SubResource("Theme_ynsuh")
 
 [node name="PanelContainer" type="PanelContainer" parent="ToolTips/Container" unique_id=1907243045]
 layout_mode = 1
-offset_right = 38.0
-offset_bottom = 17.0
+offset_left = 11.0
+offset_top = 5.0
+offset_right = 49.0
+offset_bottom = 22.0
 mouse_filter = 2
 
 [node name="TooltipTitle" type="Label" parent="ToolTips/Container/PanelContainer" unique_id=1086550673]
