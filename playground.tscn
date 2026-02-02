@@ -1,0 +1,1791 @@
+[gd_scene format=3 uid="uid://c5f8xn0aybma4"]
+
+[ext_resource type="Script" uid="uid://bjc8mkxm0oria" path="res://playground.gd" id="1_4bqqs"]
+[ext_resource type="Theme" uid="uid://dfufxhx5hni20" path="res://ui/theme.tres" id="1_rupst"]
+[ext_resource type="Script" uid="uid://se5lgrrx62eq" path="res://ui/slot.gd" id="2_is3ju"]
+[ext_resource type="Script" uid="uid://bf6jd30w4ob6j" path="res://ui/ui.gd" id="2_v7dth"]
+[ext_resource type="Texture2D" uid="uid://do3dujjujwes5" path="res://resources/textures/inventory_slot_texture.tres" id="2_wt17y"]
+[ext_resource type="Texture2D" uid="uid://dwd50p15er7an" path="res://assets/items_transparent_dropshadow.png" id="5_o00ia"]
+[ext_resource type="Script" uid="uid://ca61pwl6g0vse" path="res://tool_tips.gd" id="7_ynsuh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4bqqs"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ynsuh"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v7dth"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pi42a"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1jm5"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pio1y"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_te8jg"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjl7g"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7pug"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgc46"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dk0co"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pactg"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycdrs"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5m40n"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6kx1"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jufm4"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ymgag"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2qr3"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnugj"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2yo0f"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3i8ot"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ofol1"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_snn6g"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lraom"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g64nf"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2g8h0"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17637"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dv3cb"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ouq0e"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kt6vr"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_18oqd"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r872e"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewi0c"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_md5nv"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rngk1"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7gj2"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(192, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1nsp6"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o00ia"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2075e"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lu5cr"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_obxad"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x557p"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gixy8"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihbrm"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sq44e"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vevnq"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gl70"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mawde"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vm8iy"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehvdo"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wchrl"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v7bhf"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqrfy"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyeby"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mc48f"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jfcw5"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n1lva"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rv4pf"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gld7e"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0k1f"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65ebt"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewtdi"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5l81j"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mcv7y"]
+atlas = ExtResource("5_o00ia")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4bqqs"]
+content_margin_left = 8.0
+content_margin_right = 8.0
+bg_color = Color(0.011764706, 0.03529412, 0.21176471, 0.70980394)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="Theme" id="Theme_ynsuh"]
+default_font_size = 12
+Label/constants/line_spacing = 0
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_4bqqs")
+
+[node name="Playground" type="Node" unique_id=847819684]
+script = ExtResource("1_4bqqs")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=998342668]
+script = ExtResource("2_v7dth")
+
+[node name="Container" type="Control" parent="UI" unique_id=1019630975]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_rupst")
+
+[node name="ColorRect" type="ColorRect" parent="UI/Container" unique_id=1765270002]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Margin" type="MarginContainer" parent="UI/Container" unique_id=1528675]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Container/Margin" unique_id=1435760113]
+layout_mode = 2
+
+[node name="Header" type="PanelContainer" parent="UI/Container/Margin/VBoxContainer" unique_id=1991351838]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Container/Margin/VBoxContainer/Header" unique_id=1620811469]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="Control" type="Control" parent="UI/Container/Margin/VBoxContainer/Header/HBoxContainer" unique_id=1415516113]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="UI/Container/Margin/VBoxContainer/Header/HBoxContainer" unique_id=728380566]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "OUT OF PLACE"
+
+[node name="Control2" type="Control" parent="UI/Container/Margin/VBoxContainer/Header/HBoxContainer" unique_id=1019333745]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control" type="Control" parent="UI/Container/Margin/VBoxContainer" unique_id=1228748657]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="TabBar" type="TabContainer" parent="UI/Container/Margin/VBoxContainer" unique_id=603277694]
+layout_mode = 2
+size_flags_vertical = 3
+tab_alignment = 1
+current_tab = 1
+
+[node name="Menu" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar" unique_id=162370734]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Game" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar" unique_id=38208795]
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Control" type="MarginContainer" parent="UI/Container/Margin/VBoxContainer/TabBar/Game" unique_id=1846657136]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control" unique_id=1672373230]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer" unique_id=1218277764]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer" unique_id=2140627161]
+layout_mode = 2
+alignment = 1
+
+[node name="LabelPoints" type="Label" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer2" unique_id=1291749300]
+layout_mode = 2
+text = "Points:"
+
+[node name="ValuePoints" type="Label" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer2" unique_id=2095518883]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "10"
+horizontal_alignment = 2
+
+[node name="Control2" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer" unique_id=1341016851]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer" unique_id=1844495596]
+layout_mode = 2
+
+[node name="Control3" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer" unique_id=824366243]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer" unique_id=324731215]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=80108850]
+layout_mode = 2
+columns = 8
+
+[node name="Slot" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=355872847]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot" unique_id=1908572738]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot" unique_id=1784670081]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_4bqqs")
+metadata/_edit_lock_ = true
+
+[node name="Slot2" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1570464586]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot2" unique_id=1218974804]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot2" unique_id=549556408]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_ynsuh")
+metadata/_edit_lock_ = true
+
+[node name="Slot3" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1402898306]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot3" unique_id=319567585]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot3" unique_id=201021138]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_v7dth")
+metadata/_edit_lock_ = true
+
+[node name="Slot4" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1454116650]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot4" unique_id=1538709133]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot4" unique_id=788373131]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_pi42a")
+metadata/_edit_lock_ = true
+
+[node name="Slot5" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1019073762]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot5" unique_id=1973515103]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot5" unique_id=990937183]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_h1jm5")
+metadata/_edit_lock_ = true
+
+[node name="Slot6" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1983096170]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot6" unique_id=1704816598]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot6" unique_id=1156133083]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_pio1y")
+metadata/_edit_lock_ = true
+
+[node name="Slot7" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1614898595]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot7" unique_id=1330321654]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot7" unique_id=1889744576]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_te8jg")
+metadata/_edit_lock_ = true
+
+[node name="Slot8" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=2085050152]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot8" unique_id=1394833711]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot8" unique_id=723762936]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_yjl7g")
+metadata/_edit_lock_ = true
+
+[node name="Slot9" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=662944663]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot9" unique_id=842896312]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot9" unique_id=613663701]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_f7pug")
+metadata/_edit_lock_ = true
+
+[node name="Slot10" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1852852439]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot10" unique_id=1565827643]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot10" unique_id=684461580]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_jgc46")
+metadata/_edit_lock_ = true
+
+[node name="Slot11" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1748477494]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot11" unique_id=2066891483]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot11" unique_id=1161826690]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_dk0co")
+metadata/_edit_lock_ = true
+
+[node name="Slot12" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=748471090]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot12" unique_id=1764615421]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot12" unique_id=325194368]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_pactg")
+metadata/_edit_lock_ = true
+
+[node name="Slot13" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=8421517]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot13" unique_id=1364165826]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot13" unique_id=422984774]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_ycdrs")
+metadata/_edit_lock_ = true
+
+[node name="Slot14" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=533492012]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot14" unique_id=1922812349]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot14" unique_id=1116563628]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_5m40n")
+metadata/_edit_lock_ = true
+
+[node name="Slot15" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=308696612]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot15" unique_id=1950231668]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot15" unique_id=610917394]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_x6kx1")
+metadata/_edit_lock_ = true
+
+[node name="Slot16" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=725465579]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot16" unique_id=881002400]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot16" unique_id=61006621]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_jufm4")
+metadata/_edit_lock_ = true
+
+[node name="Slot17" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1397303914]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot17" unique_id=623293706]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot17" unique_id=116407332]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_ymgag")
+metadata/_edit_lock_ = true
+
+[node name="Slot18" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1679879426]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot18" unique_id=2111672812]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot18" unique_id=1869826056]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_u2qr3")
+metadata/_edit_lock_ = true
+
+[node name="Slot19" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1726532593]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot19" unique_id=47876971]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot19" unique_id=1357232921]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_vnugj")
+metadata/_edit_lock_ = true
+
+[node name="Slot20" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=256072817]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot20" unique_id=269026843]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot20" unique_id=1063123803]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_2yo0f")
+metadata/_edit_lock_ = true
+
+[node name="Slot21" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1492199695]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot21" unique_id=327312254]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot21" unique_id=147635842]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_3i8ot")
+metadata/_edit_lock_ = true
+
+[node name="Slot22" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=680303541]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot22" unique_id=690814800]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot22" unique_id=798384043]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_ofol1")
+metadata/_edit_lock_ = true
+
+[node name="Slot23" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=2113470494]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot23" unique_id=1052395879]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot23" unique_id=244690129]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_snn6g")
+metadata/_edit_lock_ = true
+
+[node name="Slot24" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1105275020]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot24" unique_id=1969792087]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot24" unique_id=1383686317]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_lraom")
+metadata/_edit_lock_ = true
+
+[node name="Slot25" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1428599446]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot25" unique_id=1209385894]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot25" unique_id=834932386]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_g64nf")
+metadata/_edit_lock_ = true
+
+[node name="Slot26" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=393437516]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot26" unique_id=778123475]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot26" unique_id=184357062]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_2g8h0")
+metadata/_edit_lock_ = true
+
+[node name="Slot27" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1290953155]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot27" unique_id=1040087342]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot27" unique_id=116253957]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_17637")
+metadata/_edit_lock_ = true
+
+[node name="Slot28" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1727212347]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot28" unique_id=443762253]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot28" unique_id=38639687]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_dv3cb")
+metadata/_edit_lock_ = true
+
+[node name="Slot29" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=309848918]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot29" unique_id=785733606]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot29" unique_id=827370721]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_ouq0e")
+metadata/_edit_lock_ = true
+
+[node name="Slot30" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1673618130]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot30" unique_id=1556078237]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot30" unique_id=2145194105]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_kt6vr")
+metadata/_edit_lock_ = true
+
+[node name="Slot31" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1303472007]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot31" unique_id=1366197]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot31" unique_id=770104104]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_18oqd")
+metadata/_edit_lock_ = true
+
+[node name="Slot32" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1059838444]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot32" unique_id=1154088421]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot32" unique_id=1026823277]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_r872e")
+metadata/_edit_lock_ = true
+
+[node name="Slot33" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1601764922]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot33" unique_id=2093370053]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot33" unique_id=676063332]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_ewi0c")
+metadata/_edit_lock_ = true
+
+[node name="Slot34" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1367320371]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot34" unique_id=773106815]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot34" unique_id=723586670]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_md5nv")
+metadata/_edit_lock_ = true
+
+[node name="Slot35" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=803259356]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot35" unique_id=1672305702]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot35" unique_id=687249525]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_rngk1")
+metadata/_edit_lock_ = true
+
+[node name="Slot36" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1997828135]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+item = 32
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot36" unique_id=2106120216]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot36" unique_id=1391986181]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_j7gj2")
+metadata/_edit_lock_ = true
+
+[node name="Slot37" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=68369970]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot37" unique_id=2026793826]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot37" unique_id=1542677238]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_1nsp6")
+metadata/_edit_lock_ = true
+
+[node name="Slot38" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1588514608]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot38" unique_id=619544946]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot38" unique_id=1920634961]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_o00ia")
+metadata/_edit_lock_ = true
+
+[node name="Slot39" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=2027704550]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot39" unique_id=1358626011]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot39" unique_id=1131120948]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_2075e")
+metadata/_edit_lock_ = true
+
+[node name="Slot40" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1870559086]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot40" unique_id=488909562]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot40" unique_id=587119431]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_lu5cr")
+metadata/_edit_lock_ = true
+
+[node name="Slot41" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1443097679]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot41" unique_id=746310445]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot41" unique_id=633909186]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_obxad")
+metadata/_edit_lock_ = true
+
+[node name="Slot42" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=940329524]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot42" unique_id=1632905616]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot42" unique_id=144676348]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_x557p")
+metadata/_edit_lock_ = true
+
+[node name="Slot43" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1211664680]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot43" unique_id=398377431]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot43" unique_id=2087363813]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_gixy8")
+metadata/_edit_lock_ = true
+
+[node name="Slot44" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1100650968]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot44" unique_id=720202939]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot44" unique_id=320765992]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_ihbrm")
+metadata/_edit_lock_ = true
+
+[node name="Slot45" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=220707861]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot45" unique_id=1919433781]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot45" unique_id=807762931]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_sq44e")
+metadata/_edit_lock_ = true
+
+[node name="Slot46" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=978394155]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot46" unique_id=1188779630]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot46" unique_id=978028189]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_vevnq")
+metadata/_edit_lock_ = true
+
+[node name="Slot47" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1918142217]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot47" unique_id=736746584]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot47" unique_id=482867493]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_4gl70")
+metadata/_edit_lock_ = true
+
+[node name="Slot48" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1358205984]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot48" unique_id=1075772122]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot48" unique_id=2075113680]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_mawde")
+metadata/_edit_lock_ = true
+
+[node name="Slot49" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=813271408]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot49" unique_id=945953703]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot49" unique_id=1717947345]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_vm8iy")
+metadata/_edit_lock_ = true
+
+[node name="Slot50" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1866776889]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot50" unique_id=1920642307]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot50" unique_id=569882646]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_ehvdo")
+metadata/_edit_lock_ = true
+
+[node name="Slot51" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=314442442]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot51" unique_id=52149599]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot51" unique_id=789990011]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_wchrl")
+metadata/_edit_lock_ = true
+
+[node name="Slot52" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1413380679]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot52" unique_id=1458027730]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot52" unique_id=649381414]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_v7bhf")
+metadata/_edit_lock_ = true
+
+[node name="Slot53" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1420762183]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot53" unique_id=2121101892]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot53" unique_id=1390268667]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_uqrfy")
+metadata/_edit_lock_ = true
+
+[node name="Slot54" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1726690717]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot54" unique_id=1519142201]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot54" unique_id=598741253]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_pyeby")
+metadata/_edit_lock_ = true
+
+[node name="Slot55" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=972525815]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot55" unique_id=52340080]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot55" unique_id=502706115]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_mc48f")
+metadata/_edit_lock_ = true
+
+[node name="Slot56" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=200384482]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot56" unique_id=1887968907]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot56" unique_id=445112276]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_jfcw5")
+metadata/_edit_lock_ = true
+
+[node name="Slot57" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1443299973]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot57" unique_id=1888987067]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot57" unique_id=570519374]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_n1lva")
+metadata/_edit_lock_ = true
+
+[node name="Slot58" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1897025922]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot58" unique_id=507218612]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot58" unique_id=2073194034]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_rv4pf")
+metadata/_edit_lock_ = true
+
+[node name="Slot59" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=842115296]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot59" unique_id=1647880008]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot59" unique_id=1382249615]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_gld7e")
+metadata/_edit_lock_ = true
+
+[node name="Slot60" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1094092497]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot60" unique_id=613942575]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot60" unique_id=2023549987]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_v0k1f")
+metadata/_edit_lock_ = true
+
+[node name="Slot61" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=986337942]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot61" unique_id=451862024]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot61" unique_id=382366982]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_65ebt")
+metadata/_edit_lock_ = true
+
+[node name="Slot62" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1924503109]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot62" unique_id=204614200]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot62" unique_id=1841020600]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_ewtdi")
+metadata/_edit_lock_ = true
+
+[node name="Slot63" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=686115058]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot63" unique_id=352374877]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot63" unique_id=977127270]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_5l81j")
+metadata/_edit_lock_ = true
+
+[node name="Slot64" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1623518990]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_is3ju")
+
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot64" unique_id=1637403122]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_wt17y")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer/VBoxContainer/GridContainer/Slot64" unique_id=35141433]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_mcv7y")
+metadata/_edit_lock_ = true
+
+[node name="Control2" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/HBoxContainer" unique_id=944096990]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Results" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar" unique_id=1900861493]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="ToolTips" type="CanvasLayer" parent="." unique_id=1581755084]
+unique_name_in_owner = true
+script = ExtResource("7_ynsuh")
+
+[node name="Container" type="Control" parent="ToolTips" unique_id=1185836144]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = SubResource("Theme_ynsuh")
+
+[node name="PanelContainer" type="PanelContainer" parent="ToolTips/Container" unique_id=1907243045]
+layout_mode = 1
+offset_right = 38.0
+offset_bottom = 17.0
+mouse_filter = 2
+
+[node name="TooltipTitle" type="Label" parent="ToolTips/Container/PanelContainer" unique_id=1086550673]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Sun"
