@@ -1,6 +1,7 @@
 extends Node
 
 const ABILITY_DELAY_TIMER := 1.0
+const STARTING_ITEMS := 10
 
 var score := 10:
 	set(v):
