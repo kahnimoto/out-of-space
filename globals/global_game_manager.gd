@@ -1,5 +1,7 @@
 extends Node
 
+const ABILITY_DELAY_TIMER := 1.0
+
 var score := 10:
 	set(v):
 		if score != v:
@@ -8,17 +10,25 @@ var score := 10:
 
 var is_dragging := false
 var dragging: SlottedItem.Items
-
+var dragging_from: SlottedItem
+var level: Level
 
 func _ready() -> void:
 	Events.new_item_requested.connect(_on_new_item_requested)
 	Events.drag_started.connect(_on_drag_started)
 	Events.drag_ended.connect(_on_drag_ended)
-	Events.drag_aborted.connect(_on_drag_ended)
+	Events.drag_aborted.connect(_on_drag_aborted)
+	Events.player_looted.connect(_on_player_looted)
 
 
-func _on_drag_started(item: SlottedItem.Items) -> void:
+func _input(event: InputEvent) -> void:
+	if Game.is_dragging and event is InputEventMouseButton and (event as InputEventMouseButton).button_index == MOUSE_BUTTON_RIGHT:
+		Events.drag_aborted.emit()
+
+
+func _on_drag_started(item: SlottedItem.Items, source: SlottedItem) -> void:
 	is_dragging = true
+	dragging_from = source
 	dragging = item
 
 
@@ -26,5 +36,18 @@ func _on_drag_ended() -> void:
 	is_dragging = false
 
 
+func _on_drag_aborted() -> void:
+	is_dragging = false
+	dragging_from.item = dragging
+
+
 func _on_new_item_requested() -> void:
 	score -= 1
+
+
+func _on_player_looted() -> void:
+	var free_slot: SlottedItem = level.find_first_free_slot()
+	if free_slot:
+		free_slot.debug_pick_random_item()
+	else:
+		print("No free slot")

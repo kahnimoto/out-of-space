@@ -45,7 +45,7 @@ func _update_item(item: SlottedItem.Items) -> void:
 	(item_texture.texture as AtlasTexture).region = Rect2(start_coord, Vector2(SlottedItem.SIZE, SlottedItem.SIZE))
 
 
-func _on_drag_started(item: SlottedItem.Items) -> void:
+func _on_drag_started(item: SlottedItem.Items, _source) -> void:
 	#tooltip_title.text = SlottedItem.Items.keys()[item].capitalize()
 	#tooltip_container.show()
 	_update_item(item)
