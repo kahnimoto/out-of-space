@@ -5,6 +5,6 @@ extends Node
 signal tooltip_requested(requester: Object, title: String)
 signal tooltip_released(requester: Object)
 signal score_changed(new_value: int)
-signal drag_started(item: SlottedItem.Items, source: SlottedItem)
+signal drag_started(item: SlottedItem.Items, source: Object)
 signal drag_ended()
 signal drag_aborted()

@@ -8,7 +8,7 @@ var score := 10:
 
 var is_dragging := false
 var dragging: SlottedItem.Items
-var dragging_from: SlottedItem
+var dragging_from: Object
 var level: Level
 
 
@@ -27,7 +27,7 @@ func _process(_delta: float) -> void:
 	pass
 
 
-func _on_drag_started(item: SlottedItem.Items, source: SlottedItem) -> void:
+func _on_drag_started(item: SlottedItem.Items, source: Object) -> void:
 	is_dragging = true
 	dragging_from = source
 	dragging = item

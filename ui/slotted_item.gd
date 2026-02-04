@@ -39,8 +39,14 @@ enum ItemCategories {
 	LOOT,
 	NONE
 }
+const CategoryToColor: Dictionary[ItemCategories, Color] = {
+	ItemCategories.WEAPON: Color.AQUAMARINE,
+	ItemCategories.ARMOUR: Color.DARK_SEA_GREEN,
+	ItemCategories.FOOD: Color.LIGHT_CORAL,
+	ItemCategories.LOOT: Color.SANDY_BROWN
+}
 const WEAPONS: Array[Items] = [
-	Items.WOODEN_SWORD, Items.DAGGER, Items.SHORT_SWORD, Items.IRON_SWORD, Items.BROAD_SWORD, Items.SCIMITAR, Items.RAPIER, Items.ESTOC, Items.SAI, Items.DUAL_DAGGERS, Items.BATTLE_AXE, Items.DOUBLE_BATTLE_AXE, Items.MACE, Items.WOODEN_CLUB, Items.WHIP, Items.FIST_GLOVE,
+	Items.WOODEN_SWORD, Items.DAGGER, Items.SHORT_SWORD, Items.IRON_SWORD, Items.BROAD_SWORD, Items.SCIMITAR, Items.RAPIER, Items.ESTOC, Items.SAI, Items.DUAL_DAGGERS, Items.BATTLE_AXE, Items.DOUBLE_BATTLE_AXE, Items.MACE, Items.WOODEN_CLUB, Items.WHIP,
 	Items.BOW, Items.CROSSBOW, Items.SLINGSHOT, Items.BOOMERANG, Items.STAFF_GNARLED, Items.STAFF_BLUE, Items.STAFF_RED, Items.STAFF_GREEN, Items.STAFF_YELLOW,
 ]
 
@@ -92,6 +98,7 @@ const REGION_LOCATION: Dictionary[Items, Vector2i] = {
 	Items.ORB_RED: Vector2i(0, 18), Items.ORB_BLUE: Vector2i(1, 18), Items.ORB_GREEN: Vector2i(2, 18), Items.ORB_YELLOW: Vector2i(3, 18), Items.ORB_PURPLE: Vector2i(4, 18), Items.ORB_BLACK: Vector2i(5, 18),
 }
 const SIZE := 32
+const ITEMS_TRANSPARENT_DROPSHADOW = preload("uid://dwd50p15er7an")
 
 @export var item: Items = Items.EMPTY:
 	set(v):
@@ -109,6 +116,8 @@ var item_name: String:
 
 
 func _ready() -> void:
+	slot_item_texture.texture = AtlasTexture.new()
+	slot_item_texture.texture.atlas = ITEMS_TRANSPARENT_DROPSHADOW
 	_update_item()
 	slot_item_texture.mouse_entered.connect(_on_mouse_entered)
 	slot_item_texture.mouse_exited.connect(_on_mouse_exited)
@@ -118,7 +127,11 @@ func _ready() -> void:
 static func item_to_texture_rect(i: Items) -> Rect2:
 	var start_coord = REGION_LOCATION[i] * SIZE as Vector2
 	return Rect2(start_coord, Vector2(SIZE, SIZE))
-	
+
+
+func set_background(category: ItemCategories) -> void:
+	if category in CategoryToColor:
+		slot_background.self_modulate = CategoryToColor[category]
 
 func _update_item() -> void:
 	if slot_item_texture.texture is AtlasTexture:

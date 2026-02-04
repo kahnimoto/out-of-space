@@ -46,11 +46,11 @@ func find_first_free_slot() -> SlottedItem:
 
 
 func fill_start_inventory() -> void:
-	var random_category: SlottedItem.ItemCategories = SlottedItem.ItemCategories.WEAPON
-	var other_category: SlottedItem.ItemCategories = SlottedItem.ItemCategories.ARMOUR
+	var random_category: SlottedItem.ItemCategories = SlottedItem.ItemCategories.LOOT
+	var other_category: SlottedItem.ItemCategories = SlottedItem.ItemCategories.WEAPON
 	slots.map(func(s: SlottedItem): 
 		s.pick_random_item_from_category(random_category)
-		print(s.item)
+		s.set_background(random_category)
 	)
 	var count_out_of_place := 4
 	for i in count_out_of_place:

@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dvk8kr67yiqnq"]
+
+[ext_resource type="Script" uid="uid://j8v3s0klj7wj" path="res://ui/OutgoingSlot.gd" id="1_2jwym"]
+[ext_resource type="Texture2D" uid="uid://c2t5s25qbvegl" path="res://assets/tileset.png" id="2_i40fr"]
+[ext_resource type="Texture2D" uid="uid://dwd50p15er7an" path="res://assets/items_transparent_dropshadow.png" id="3_b8ong"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gnp1w"]
+atlas = ExtResource("2_i40fr")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwynl"]
+resource_local_to_scene = true
+atlas = ExtResource("3_b8ong")
+region = Rect2(352, 0, 32, 32)
+
+[node name="Slot" type="Control" unique_id=2098503924 groups=["shop_slot"]]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_2jwym")
+
+[node name="SlotBackground" type="TextureRect" parent="." unique_id=1943994168]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_gnp1w")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="." unique_id=193294291]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_dwynl")
+metadata/_edit_lock_ = true
