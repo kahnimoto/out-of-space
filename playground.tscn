@@ -2,317 +2,16 @@
 
 [ext_resource type="Script" uid="uid://bjc8mkxm0oria" path="res://playground.gd" id="1_4bqqs"]
 [ext_resource type="Theme" uid="uid://dfufxhx5hni20" path="res://ui/theme.tres" id="1_rupst"]
-[ext_resource type="Script" uid="uid://se5lgrrx62eq" path="res://ui/slotted_item.gd" id="2_is3ju"]
-[ext_resource type="Texture2D" uid="uid://do3dujjujwes5" path="res://resources/textures/inventory_slot_texture.tres" id="2_wt17y"]
+[ext_resource type="PackedScene" uid="uid://bcn6c78r7cjih" path="res://ui/slot.tscn" id="3_4bqqs"]
 [ext_resource type="Texture2D" uid="uid://dwd50p15er7an" path="res://assets/items_transparent_dropshadow.png" id="5_o00ia"]
 [ext_resource type="Script" uid="uid://ca61pwl6g0vse" path="res://ui/tool_tips.gd" id="7_ynsuh"]
 [ext_resource type="Texture2D" uid="uid://c2t5s25qbvegl" path="res://assets/tileset.png" id="8_pi42a"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4bqqs"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ynsuh"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v7dth"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pi42a"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h1jm5"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pio1y"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_te8jg"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yjl7g"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f7pug"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jgc46"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dk0co"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pactg"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ycdrs"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5m40n"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x6kx1"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jufm4"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ymgag"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u2qr3"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_aih2d"]
-atlas = ExtResource("8_pi42a")
-region = Rect2(0, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vnugj"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2yo0f"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3i8ot"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ofol1"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_snn6g"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lraom"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_g64nf"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2g8h0"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_17637"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dv3cb"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ouq0e"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kt6vr"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_18oqd"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_r872e"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ewi0c"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_md5nv"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rngk1"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_j7gj2"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1nsp6"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_o00ia"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2075e"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lu5cr"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_obxad"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x557p"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gixy8"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ihbrm"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sq44e"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vevnq"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4gl70"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mawde"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vm8iy"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ehvdo"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wchrl"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v7bhf"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uqrfy"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pyeby"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mc48f"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jfcw5"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_n1lva"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rv4pf"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gld7e"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v0k1f"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_65ebt"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ewtdi"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5l81j"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mcv7y"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pi42a"]
-bg_color = Color(0.20392157, 0.20392157, 0.20392157, 0.8509804)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h1jm5"]
-bg_color = Color(1, 1, 1, 0.11764706)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pio1y"]
-bg_color = Color(0.012617188, 0.012617188, 0.012617188, 0.13333334)
-
-[sub_resource type="Theme" id="Theme_pi42a"]
-Button/styles/disabled = SubResource("StyleBoxFlat_pi42a")
-Button/styles/hover = SubResource("StyleBoxFlat_h1jm5")
-Button/styles/normal = SubResource("StyleBoxFlat_pio1y")
-Label/colors/font_outline_color = Color(0, 0, 0, 1)
-Label/constants/outline_size = 2
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_aifqc"]
-atlas = ExtResource("8_pi42a")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lotv4"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(256, 128, 32, 32)
-
-[sub_resource type="InputEventKey" id="InputEventKey_pi42a"]
-device = -1
-keycode = 49
-unicode = 49
-
-[sub_resource type="Shortcut" id="Shortcut_h1jm5"]
-events = [SubResource("InputEventKey_pi42a")]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bv4ag"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(352, 384, 32, 32)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_te8jg"]
 bg_color = Color(1, 1, 1, 0.15686275)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yjl7g"]
 bg_color = Color(0.34081984, 0.687168, 0.43022972, 1)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dsrt8"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(288, 256, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gnp1w"]
 atlas = ExtResource("8_pi42a")
@@ -324,11 +23,11 @@ region = Rect2(352, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2qq6p"]
 atlas = ExtResource("5_o00ia")
-region = Rect2(288, 160, 32, 32)
+region = Rect2(352, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i30lc"]
 atlas = ExtResource("5_o00ia")
-region = Rect2(192, 160, 32, 32)
+region = Rect2(352, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r0ngv"]
 atlas = ExtResource("5_o00ia")
@@ -349,36 +48,6 @@ region = Rect2(352, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_ufreq"]
 atlas = ExtResource("5_o00ia")
 region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="GDScript" id="GDScript_ynsuh"]
-script/source = "extends Control
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
-"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4eiv7"]
-atlas = ExtResource("8_pi42a")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_av3u1"]
-atlas = ExtResource("5_o00ia")
-region = Rect2(384, 384, 32, 32)
-
-[sub_resource type="InputEventKey" id="InputEventKey_aih2d"]
-device = -1
-keycode = 83
-unicode = 115
-
-[sub_resource type="Shortcut" id="Shortcut_n8i7s"]
-events = [SubResource("InputEventKey_aih2d")]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pi42a"]
 load_path = "res://.godot/imported/items_transparent_dropshadow.png-b8942f16d5dcfac610d1c4379faf7577.ctex"
@@ -463,22 +132,11 @@ size_flags_horizontal = 3
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 
-[node name="TabBar" type="TabContainer" parent="UI/Container/Margin/VBoxContainer" unique_id=603277694]
+[node name="Game" type="Control" parent="UI/Container/Margin/VBoxContainer" unique_id=38208795]
 layout_mode = 2
 size_flags_vertical = 3
-tab_alignment = 1
-current_tab = 1
 
-[node name="Menu" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar" unique_id=162370734]
-visible = false
-layout_mode = 2
-metadata/_tab_index = 0
-
-[node name="Game" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar" unique_id=38208795]
-layout_mode = 2
-metadata/_tab_index = 1
-
-[node name="Control" type="MarginContainer" parent="UI/Container/Margin/VBoxContainer/TabBar/Game" unique_id=1846657136]
+[node name="Control" type="MarginContainer" parent="UI/Container/Margin/VBoxContainer/Game" unique_id=1846657136]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -490,40 +148,41 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control" unique_id=1672373230]
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Container/Margin/VBoxContainer/Game/Control" unique_id=1672373230]
 layout_mode = 2
 
-[node name="Control" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer" unique_id=1218277764]
+[node name="Control" type="Control" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer" unique_id=1218277764]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 
-[node name="PointsContainer" type="HBoxContainer" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer" unique_id=2140627161]
+[node name="PointsContainer" type="HBoxContainer" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer" unique_id=2140627161]
 layout_mode = 2
 alignment = 1
 
-[node name="LabelPoints" type="Label" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/PointsContainer" unique_id=1291749300]
+[node name="LabelPoints" type="Label" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/PointsContainer" unique_id=1291749300]
 layout_mode = 2
 text = "Points:"
 
-[node name="ValuePoints" type="Label" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/PointsContainer" unique_id=2095518883]
+[node name="ValuePoints" type="Label" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/PointsContainer" unique_id=2095518883]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 text = "10"
 horizontal_alignment = 2
 
-[node name="Control2" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer" unique_id=1341016851]
+[node name="Control2" type="Control" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer" unique_id=1341016851]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 
-[node name="MainContainer" type="HBoxContainer" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer" unique_id=1844495596]
+[node name="MainContainer" type="HBoxContainer" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer" unique_id=1844495596]
 layout_mode = 2
+size_flags_vertical = 3
 
-[node name="InstructionsContainer" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer" unique_id=824366243]
+[node name="InstructionsContainer" type="Control" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer" unique_id=824366243]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="RichTextLabel" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InstructionsContainer" unique_id=2103867639]
+[node name="Label" type="RichTextLabel" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InstructionsContainer" unique_id=2103867639]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -550,1507 +209,43 @@ Earn as much points as possible
 before time or space is out.
 "
 
-[node name="InventoryAndAbilities" type="VBoxContainer" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer" unique_id=324731215]
+[node name="InventoryAndAbilities" type="VBoxContainer" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer" unique_id=324731215]
 layout_mode = 2
 
-[node name="InventoryGridContainer" type="GridContainer" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities" unique_id=80108850]
+[node name="InventoryGridContainer" type="GridContainer" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities" unique_id=80108850]
 layout_mode = 2
 size_flags_horizontal = 4
-columns = 8
+columns = 6
 
-[node name="Slot" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=355872847 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
+[node name="Slot" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1093646726 instance=ExtResource("3_4bqqs")]
 layout_mode = 2
-script = ExtResource("2_is3ju")
+item = 15
 
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot" unique_id=1908572738]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot" unique_id=1784670081]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_4bqqs")
-metadata/_edit_lock_ = true
-
-[node name="Slot2" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1570464586 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot2" unique_id=1218974804]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot2" unique_id=549556408]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_ynsuh")
-metadata/_edit_lock_ = true
-
-[node name="Slot3" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1402898306 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot3" unique_id=319567585]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot3" unique_id=201021138]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_v7dth")
-metadata/_edit_lock_ = true
-
-[node name="Slot4" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1454116650 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot4" unique_id=1538709133]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot4" unique_id=788373131]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_pi42a")
-metadata/_edit_lock_ = true
-
-[node name="Slot5" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1019073762 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot5" unique_id=1973515103]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot5" unique_id=990937183]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_h1jm5")
-metadata/_edit_lock_ = true
-
-[node name="Slot6" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1983096170 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot6" unique_id=1704816598]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot6" unique_id=1156133083]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_pio1y")
-metadata/_edit_lock_ = true
-
-[node name="Slot7" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1614898595 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot7" unique_id=1330321654]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot7" unique_id=1889744576]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_te8jg")
-metadata/_edit_lock_ = true
-
-[node name="Slot8" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=2085050152 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot8" unique_id=1394833711]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot8" unique_id=723762936]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_yjl7g")
-metadata/_edit_lock_ = true
-
-[node name="Slot9" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=662944663 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot9" unique_id=842896312]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot9" unique_id=613663701]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_f7pug")
-metadata/_edit_lock_ = true
-
-[node name="Slot10" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1852852439 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot10" unique_id=1565827643]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot10" unique_id=684461580]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_jgc46")
-metadata/_edit_lock_ = true
-
-[node name="Slot11" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1748477494 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot11" unique_id=2066891483]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot11" unique_id=1161826690]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_dk0co")
-metadata/_edit_lock_ = true
-
-[node name="Slot12" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=748471090 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot12" unique_id=1764615421]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot12" unique_id=325194368]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_pactg")
-metadata/_edit_lock_ = true
-
-[node name="Slot13" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=8421517 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot13" unique_id=1364165826]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot13" unique_id=422984774]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_ycdrs")
-metadata/_edit_lock_ = true
-
-[node name="Slot14" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=533492012 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot14" unique_id=1922812349]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot14" unique_id=1116563628]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_5m40n")
-metadata/_edit_lock_ = true
-
-[node name="Slot15" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=308696612 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot15" unique_id=1950231668]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot15" unique_id=610917394]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_x6kx1")
-metadata/_edit_lock_ = true
-
-[node name="Slot16" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=725465579 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot16" unique_id=881002400]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot16" unique_id=61006621]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_jufm4")
-metadata/_edit_lock_ = true
-
-[node name="Slot17" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1397303914 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot17" unique_id=623293706]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot17" unique_id=116407332]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_ymgag")
-metadata/_edit_lock_ = true
-
-[node name="Slot18" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1679879426 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot18" unique_id=2111672812]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot18" unique_id=1869826056]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_u2qr3")
-metadata/_edit_lock_ = true
-
-[node name="Slot19" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1726532593 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot19" unique_id=47876971]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_aih2d")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot19" unique_id=1357232921]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_vnugj")
-metadata/_edit_lock_ = true
-
-[node name="Slot20" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=256072817 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot20" unique_id=269026843]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot20" unique_id=1063123803]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_2yo0f")
-metadata/_edit_lock_ = true
-
-[node name="Slot21" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1492199695 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot21" unique_id=327312254]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot21" unique_id=147635842]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_3i8ot")
-metadata/_edit_lock_ = true
-
-[node name="Slot22" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=680303541 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot22" unique_id=690814800]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot22" unique_id=798384043]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_ofol1")
-metadata/_edit_lock_ = true
-
-[node name="Slot23" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=2113470494 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot23" unique_id=1052395879]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot23" unique_id=244690129]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_snn6g")
-metadata/_edit_lock_ = true
-
-[node name="Slot24" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1105275020 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot24" unique_id=1969792087]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot24" unique_id=1383686317]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_lraom")
-metadata/_edit_lock_ = true
-
-[node name="Slot25" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1428599446 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot25" unique_id=1209385894]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot25" unique_id=834932386]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_g64nf")
-metadata/_edit_lock_ = true
-
-[node name="Slot26" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=393437516 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot26" unique_id=778123475]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot26" unique_id=184357062]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_2g8h0")
-metadata/_edit_lock_ = true
-
-[node name="Slot27" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1290953155 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot27" unique_id=1040087342]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot27" unique_id=116253957]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_17637")
-metadata/_edit_lock_ = true
-
-[node name="Slot28" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1727212347 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot28" unique_id=443762253]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot28" unique_id=38639687]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_dv3cb")
-metadata/_edit_lock_ = true
-
-[node name="Slot29" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=309848918 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot29" unique_id=785733606]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot29" unique_id=827370721]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_ouq0e")
-metadata/_edit_lock_ = true
-
-[node name="Slot30" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1673618130 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot30" unique_id=1556078237]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot30" unique_id=2145194105]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_kt6vr")
-metadata/_edit_lock_ = true
-
-[node name="Slot31" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1303472007 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot31" unique_id=1366197]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot31" unique_id=770104104]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_18oqd")
-metadata/_edit_lock_ = true
-
-[node name="Slot32" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1059838444 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot32" unique_id=1154088421]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot32" unique_id=1026823277]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_r872e")
-metadata/_edit_lock_ = true
-
-[node name="Slot33" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1601764922 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot33" unique_id=2093370053]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot33" unique_id=676063332]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_ewi0c")
-metadata/_edit_lock_ = true
-
-[node name="Slot34" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1367320371 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot34" unique_id=773106815]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot34" unique_id=723586670]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_md5nv")
-metadata/_edit_lock_ = true
-
-[node name="Slot35" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=803259356 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot35" unique_id=1672305702]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot35" unique_id=687249525]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_rngk1")
-metadata/_edit_lock_ = true
-
-[node name="Slot36" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1997828135 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot36" unique_id=2106120216]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot36" unique_id=1391986181]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_j7gj2")
-metadata/_edit_lock_ = true
-
-[node name="Slot37" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=68369970 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot37" unique_id=2026793826]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot37" unique_id=1542677238]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_1nsp6")
-metadata/_edit_lock_ = true
-
-[node name="Slot38" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1588514608 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot38" unique_id=619544946]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot38" unique_id=1920634961]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_o00ia")
-metadata/_edit_lock_ = true
-
-[node name="Slot39" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=2027704550 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot39" unique_id=1358626011]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot39" unique_id=1131120948]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_2075e")
-metadata/_edit_lock_ = true
-
-[node name="Slot40" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1870559086 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot40" unique_id=488909562]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot40" unique_id=587119431]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_lu5cr")
-metadata/_edit_lock_ = true
-
-[node name="Slot41" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1443097679 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot41" unique_id=746310445]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot41" unique_id=633909186]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_obxad")
-metadata/_edit_lock_ = true
-
-[node name="Slot42" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=940329524 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot42" unique_id=1632905616]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot42" unique_id=144676348]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_x557p")
-metadata/_edit_lock_ = true
-
-[node name="Slot43" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1211664680 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot43" unique_id=398377431]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot43" unique_id=2087363813]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_gixy8")
-metadata/_edit_lock_ = true
-
-[node name="Slot44" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1100650968 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot44" unique_id=720202939]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot44" unique_id=320765992]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_ihbrm")
-metadata/_edit_lock_ = true
-
-[node name="Slot45" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=220707861 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot45" unique_id=1919433781]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot45" unique_id=807762931]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_sq44e")
-metadata/_edit_lock_ = true
-
-[node name="Slot46" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=978394155 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot46" unique_id=1188779630]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot46" unique_id=978028189]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_vevnq")
-metadata/_edit_lock_ = true
-
-[node name="Slot47" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1918142217 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot47" unique_id=736746584]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot47" unique_id=482867493]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_4gl70")
-metadata/_edit_lock_ = true
-
-[node name="Slot48" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1358205984 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot48" unique_id=1075772122]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot48" unique_id=2075113680]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_mawde")
-metadata/_edit_lock_ = true
-
-[node name="Slot49" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=813271408 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot49" unique_id=945953703]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot49" unique_id=1717947345]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_vm8iy")
-metadata/_edit_lock_ = true
-
-[node name="Slot50" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1866776889 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot50" unique_id=1920642307]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot50" unique_id=569882646]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_ehvdo")
-metadata/_edit_lock_ = true
-
-[node name="Slot51" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=314442442 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot51" unique_id=52149599]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot51" unique_id=789990011]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_wchrl")
-metadata/_edit_lock_ = true
-
-[node name="Slot52" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1413380679 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot52" unique_id=1458027730]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot52" unique_id=649381414]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_v7bhf")
-metadata/_edit_lock_ = true
-
-[node name="Slot53" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1420762183 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot53" unique_id=2121101892]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot53" unique_id=1390268667]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_uqrfy")
-metadata/_edit_lock_ = true
-
-[node name="Slot54" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1726690717 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot54" unique_id=1519142201]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot54" unique_id=598741253]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_pyeby")
-metadata/_edit_lock_ = true
-
-[node name="Slot55" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=972525815 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot55" unique_id=52340080]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot55" unique_id=502706115]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_mc48f")
-metadata/_edit_lock_ = true
-
-[node name="Slot56" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=200384482 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot56" unique_id=1887968907]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot56" unique_id=445112276]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_jfcw5")
-metadata/_edit_lock_ = true
-
-[node name="Slot57" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1443299973 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot57" unique_id=1888987067]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot57" unique_id=570519374]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_n1lva")
-metadata/_edit_lock_ = true
-
-[node name="Slot58" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1897025922 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot58" unique_id=507218612]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot58" unique_id=2073194034]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_rv4pf")
-metadata/_edit_lock_ = true
-
-[node name="Slot59" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=842115296 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
+[node name="Slot2" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=884887684 instance=ExtResource("3_4bqqs")]
 layout_mode = 2
-script = ExtResource("2_is3ju")
+item = 12
 
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot59" unique_id=1647880008]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot59" unique_id=1382249615]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_gld7e")
-metadata/_edit_lock_ = true
-
-[node name="Slot60" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1094092497 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot60" unique_id=613942575]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot60" unique_id=2023549987]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_v0k1f")
-metadata/_edit_lock_ = true
-
-[node name="Slot61" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=986337942 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot61" unique_id=451862024]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot61" unique_id=382366982]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_65ebt")
-metadata/_edit_lock_ = true
-
-[node name="Slot62" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1924503109 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
+[node name="Slot3" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1348678685 instance=ExtResource("3_4bqqs")]
 layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot62" unique_id=204614200]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot62" unique_id=1841020600]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_ewtdi")
-metadata/_edit_lock_ = true
+item = 12
 
-[node name="Slot63" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=686115058 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
+[node name="Slot4" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=471507693 instance=ExtResource("3_4bqqs")]
 layout_mode = 2
-script = ExtResource("2_is3ju")
+item = 25
 
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot63" unique_id=352374877]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot63" unique_id=977127270]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_5l81j")
-metadata/_edit_lock_ = true
-
-[node name="Slot64" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1623518990 groups=["inventory_slot"]]
-custom_minimum_size = Vector2(32, 32)
+[node name="Slot5" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1086713713 instance=ExtResource("3_4bqqs")]
 layout_mode = 2
-script = ExtResource("2_is3ju")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot64" unique_id=1637403122]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("2_wt17y")
-metadata/_edit_lock_ = true
-
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer/Slot64" unique_id=35141433]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_mcv7y")
-metadata/_edit_lock_ = true
+item = 23
 
-[node name="Control" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities" unique_id=2128581378]
+[node name="Control" type="Control" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities" unique_id=2128581378]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 
-[node name="AbilitiesContainer" type="HBoxContainer" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities" unique_id=2052327146]
-layout_mode = 2
-theme = SubResource("Theme_pi42a")
-
-[node name="Ability" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/AbilitiesContainer" unique_id=99769032]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/AbilitiesContainer/Ability" unique_id=392079272]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_aifqc")
-metadata/_edit_lock_ = true
-
-[node name="SlotTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/AbilitiesContainer/Ability" unique_id=842091499]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_lotv4")
-metadata/_edit_lock_ = true
-
-[node name="Label" type="Label" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/AbilitiesContainer/Ability" unique_id=2097028699]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -35.0
-offset_top = -2.0
-offset_right = -18.0
-offset_bottom = 21.0
-grow_horizontal = 0
-text = "1"
-horizontal_alignment = 2
-
-[node name="AbilityButton1" type="Button" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/AbilitiesContainer/Ability" unique_id=1790599929]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-shortcut = SubResource("Shortcut_h1jm5")
-
-[node name="Ability2" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/AbilitiesContainer" unique_id=870984318]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/AbilitiesContainer/Ability2" unique_id=433844335]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_aifqc")
-metadata/_edit_lock_ = true
-
-[node name="SlotTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/AbilitiesContainer/Ability2" unique_id=730537357]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_bv4ag")
-metadata/_edit_lock_ = true
-
-[node name="Label" type="Label" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/AbilitiesContainer/Ability2" unique_id=1561200139]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -35.0
-offset_top = -2.0
-offset_right = -18.0
-offset_bottom = 21.0
-grow_horizontal = 0
-text = "2"
-horizontal_alignment = 2
-
-[node name="AbilityButton2" type="Button" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/AbilitiesContainer/Ability2" unique_id=135497886]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-disabled = true
-
-[node name="ShopContainer" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer" unique_id=944096990]
+[node name="ShopContainer" type="Control" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer" unique_id=944096990]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="WaitingForShop" type="VBoxContainer" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer" unique_id=1051378664]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Control" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/WaitingForShop" unique_id=456494432]
-custom_minimum_size = Vector2(0, 16)
-layout_mode = 2
-
-[node name="TimeUntilShopper" type="ProgressBar" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/WaitingForShop" unique_id=1322895539]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(256, 32)
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_styles/background = SubResource("StyleBoxFlat_te8jg")
-theme_override_styles/fill = SubResource("StyleBoxFlat_yjl7g")
-step = 1.0
-value = 89.0
-show_percentage = false
-
-[node name="Label" type="Label" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/WaitingForShop/TimeUntilShopper" unique_id=167721900]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -162.0
-offset_top = -14.0
-offset_right = 162.0
-offset_bottom = 14.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_type_variation = &"HeaderSmall"
-text = "Waiting for orders ..."
-horizontal_alignment = 1
-
-[node name="Control2" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/WaitingForShop" unique_id=1861575267]
-custom_minimum_size = Vector2(0, 16)
-layout_mode = 2
-
-[node name="Control3" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/WaitingForShop" unique_id=78746260]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Shop" type="VBoxContainer" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer" unique_id=1069498407]
+[node name="Shop" type="VBoxContainer" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer" unique_id=1069498407]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -2059,11 +254,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Control" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop" unique_id=1310229655]
+[node name="Control" type="Control" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop" unique_id=1310229655]
 custom_minimum_size = Vector2(0, 62.61)
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control" unique_id=620121960]
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control" unique_id=620121960]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -2073,11 +268,11 @@ offset_right = 128.0
 offset_bottom = 64.0
 grow_horizontal = 2
 
-[node name="Control5" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer" unique_id=2128844056]
+[node name="Control5" type="Control" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer" unique_id=2128844056]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 
-[node name="TimeUntilShopCloses" type="ProgressBar" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer" unique_id=1379544866]
+[node name="RoundTimer" type="ProgressBar" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer" unique_id=1379544866]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(256, 32)
 layout_mode = 2
@@ -2088,7 +283,7 @@ step = 1.0
 value = 89.0
 show_percentage = false
 
-[node name="Label" type="Label" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/TimeUntilShopCloses" unique_id=190060390]
+[node name="Label" type="Label" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/RoundTimer" unique_id=190060390]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -2102,64 +297,24 @@ offset_bottom = 14.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_type_variation = &"HeaderSmall"
-text = "The fighters guild needs"
+text = "Time left"
 horizontal_alignment = 1
 
-[node name="Control3" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer" unique_id=684557495]
+[node name="Control3" type="Control" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer" unique_id=684557495]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 
-[node name="Control" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer" unique_id=1886876765]
-custom_minimum_size = Vector2(0, 32)
-layout_mode = 2
-
-[node name="OrdersContainer" type="VBoxContainer" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/Control" unique_id=1286823201]
-custom_minimum_size = Vector2(0, 32)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/Control/OrdersContainer" unique_id=1298049301]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="ValueTimes" type="Label" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/Control/OrdersContainer/HBoxContainer" unique_id=2012839109]
-layout_mode = 2
-text = "1"
-
-[node name="TimesLevel" type="Label" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/Control/OrdersContainer/HBoxContainer" unique_id=387053306]
-layout_mode = 2
-text = "x"
-
-[node name="SlotTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/Control/OrdersContainer/HBoxContainer" unique_id=222276829]
-texture_filter = 1
-layout_mode = 2
-texture = SubResource("AtlasTexture_dsrt8")
-metadata/_edit_lock_ = true
-
-[node name="ValuePoints" type="Label" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/Control/OrdersContainer/HBoxContainer" unique_id=315692511]
-layout_mode = 2
-text = "10p"
-
-[node name="Control4" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer" unique_id=1912383176]
-custom_minimum_size = Vector2(0, 16)
-layout_mode = 2
-
-[node name="ShopInventory" type="GridContainer" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer" unique_id=1395296954]
+[node name="ShopInventory" type="GridContainer" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer" unique_id=1395296954]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 columns = 8
 
-[node name="Slot" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory" unique_id=320265433 groups=["shop_slot"]]
+[node name="Slot" type="Control" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory" unique_id=320265433 groups=["shop_slot"]]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-script = ExtResource("2_is3ju")
 
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory/Slot" unique_id=1876896609]
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory/Slot" unique_id=1876896609]
 texture_filter = 1
 layout_mode = 0
 offset_right = 32.0
@@ -2167,7 +322,7 @@ offset_bottom = 32.0
 texture = SubResource("AtlasTexture_gnp1w")
 metadata/_edit_lock_ = true
 
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory/Slot" unique_id=743513904]
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory/Slot" unique_id=743513904]
 texture_filter = 1
 layout_mode = 0
 offset_right = 32.0
@@ -2175,13 +330,11 @@ offset_bottom = 32.0
 texture = SubResource("AtlasTexture_dwynl")
 metadata/_edit_lock_ = true
 
-[node name="Slot2" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory" unique_id=2053074756 groups=["shop_slot"]]
+[node name="Slot2" type="Control" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory" unique_id=2053074756 groups=["shop_slot"]]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-script = ExtResource("2_is3ju")
-item = 14
 
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory/Slot2" unique_id=1894973919]
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory/Slot2" unique_id=1894973919]
 texture_filter = 1
 layout_mode = 0
 offset_right = 32.0
@@ -2189,7 +342,7 @@ offset_bottom = 32.0
 texture = SubResource("AtlasTexture_gnp1w")
 metadata/_edit_lock_ = true
 
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory/Slot2" unique_id=1745670238]
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory/Slot2" unique_id=1745670238]
 texture_filter = 1
 layout_mode = 0
 offset_right = 32.0
@@ -2197,13 +350,11 @@ offset_bottom = 32.0
 texture = SubResource("AtlasTexture_2qq6p")
 metadata/_edit_lock_ = true
 
-[node name="Slot3" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory" unique_id=67774055 groups=["shop_slot"]]
+[node name="Slot3" type="Control" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory" unique_id=67774055 groups=["shop_slot"]]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-script = ExtResource("2_is3ju")
-item = 11
 
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory/Slot3" unique_id=1859375850]
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory/Slot3" unique_id=1859375850]
 texture_filter = 1
 layout_mode = 0
 offset_right = 32.0
@@ -2211,7 +362,7 @@ offset_bottom = 32.0
 texture = SubResource("AtlasTexture_gnp1w")
 metadata/_edit_lock_ = true
 
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory/Slot3" unique_id=1241725176]
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory/Slot3" unique_id=1241725176]
 texture_filter = 1
 layout_mode = 0
 offset_right = 32.0
@@ -2219,12 +370,11 @@ offset_bottom = 32.0
 texture = SubResource("AtlasTexture_i30lc")
 metadata/_edit_lock_ = true
 
-[node name="Slot4" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory" unique_id=301260036 groups=["shop_slot"]]
+[node name="Slot4" type="Control" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory" unique_id=301260036 groups=["shop_slot"]]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-script = ExtResource("2_is3ju")
 
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory/Slot4" unique_id=687117632]
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory/Slot4" unique_id=687117632]
 texture_filter = 1
 layout_mode = 0
 offset_right = 32.0
@@ -2232,7 +382,7 @@ offset_bottom = 32.0
 texture = SubResource("AtlasTexture_gnp1w")
 metadata/_edit_lock_ = true
 
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory/Slot4" unique_id=1739094529]
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory/Slot4" unique_id=1739094529]
 texture_filter = 1
 layout_mode = 0
 offset_right = 32.0
@@ -2240,12 +390,11 @@ offset_bottom = 32.0
 texture = SubResource("AtlasTexture_r0ngv")
 metadata/_edit_lock_ = true
 
-[node name="Slot5" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory" unique_id=1259444874 groups=["shop_slot"]]
+[node name="Slot5" type="Control" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory" unique_id=1259444874 groups=["shop_slot"]]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-script = ExtResource("2_is3ju")
 
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory/Slot5" unique_id=871399541]
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory/Slot5" unique_id=871399541]
 texture_filter = 1
 layout_mode = 0
 offset_right = 32.0
@@ -2253,7 +402,7 @@ offset_bottom = 32.0
 texture = SubResource("AtlasTexture_gnp1w")
 metadata/_edit_lock_ = true
 
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory/Slot5" unique_id=1619638461]
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory/Slot5" unique_id=1619638461]
 texture_filter = 1
 layout_mode = 0
 offset_right = 32.0
@@ -2261,12 +410,11 @@ offset_bottom = 32.0
 texture = SubResource("AtlasTexture_t2437")
 metadata/_edit_lock_ = true
 
-[node name="Slot6" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory" unique_id=735969404 groups=["shop_slot"]]
+[node name="Slot6" type="Control" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory" unique_id=735969404 groups=["shop_slot"]]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-script = ExtResource("2_is3ju")
 
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory/Slot6" unique_id=1407778977]
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory/Slot6" unique_id=1407778977]
 texture_filter = 1
 layout_mode = 0
 offset_right = 32.0
@@ -2274,7 +422,7 @@ offset_bottom = 32.0
 texture = SubResource("AtlasTexture_gnp1w")
 metadata/_edit_lock_ = true
 
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory/Slot6" unique_id=1328872828]
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory/Slot6" unique_id=1328872828]
 texture_filter = 1
 layout_mode = 0
 offset_right = 32.0
@@ -2282,12 +430,11 @@ offset_bottom = 32.0
 texture = SubResource("AtlasTexture_8o5pv")
 metadata/_edit_lock_ = true
 
-[node name="Slot7" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory" unique_id=1293466581 groups=["shop_slot"]]
+[node name="Slot7" type="Control" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory" unique_id=1293466581 groups=["shop_slot"]]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-script = ExtResource("2_is3ju")
 
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory/Slot7" unique_id=730930978]
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory/Slot7" unique_id=730930978]
 texture_filter = 1
 layout_mode = 0
 offset_right = 32.0
@@ -2295,7 +442,7 @@ offset_bottom = 32.0
 texture = SubResource("AtlasTexture_gnp1w")
 metadata/_edit_lock_ = true
 
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory/Slot7" unique_id=178292577]
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory/Slot7" unique_id=178292577]
 texture_filter = 1
 layout_mode = 0
 offset_right = 32.0
@@ -2303,12 +450,11 @@ offset_bottom = 32.0
 texture = SubResource("AtlasTexture_0kmma")
 metadata/_edit_lock_ = true
 
-[node name="Slot8" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory" unique_id=845093743 groups=["shop_slot"]]
+[node name="Slot8" type="Control" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory" unique_id=845093743 groups=["shop_slot"]]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-script = ExtResource("2_is3ju")
 
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory/Slot8" unique_id=1903054828]
+[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory/Slot8" unique_id=1903054828]
 texture_filter = 1
 layout_mode = 0
 offset_right = 32.0
@@ -2316,7 +462,7 @@ offset_bottom = 32.0
 texture = SubResource("AtlasTexture_gnp1w")
 metadata/_edit_lock_ = true
 
-[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory/Slot8" unique_id=1683220223]
+[node name="SlotItemTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory/Slot8" unique_id=1683220223]
 texture_filter = 1
 layout_mode = 0
 offset_right = 32.0
@@ -2324,7 +470,7 @@ offset_bottom = 32.0
 texture = SubResource("AtlasTexture_ufreq")
 metadata/_edit_lock_ = true
 
-[node name="SlotItemTexture2" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory/Slot8" unique_id=500127769]
+[node name="SlotItemTexture2" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory/Slot8" unique_id=500127769]
 texture_filter = 1
 layout_mode = 0
 offset_right = 32.0
@@ -2332,62 +478,9 @@ offset_bottom = 32.0
 texture = SubResource("AtlasTexture_ufreq")
 metadata/_edit_lock_ = true
 
-[node name="Control2" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer" unique_id=251548345]
+[node name="Control2" type="Control" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer" unique_id=251548345]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer" unique_id=152175582]
-layout_mode = 2
-
-[node name="Shop" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/HBoxContainer" unique_id=1276015594]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = SubResource("GDScript_ynsuh")
-
-[node name="SlotBackground" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/HBoxContainer/Shop" unique_id=921665327]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_4eiv7")
-metadata/_edit_lock_ = true
-
-[node name="SlotTexture" type="TextureRect" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/HBoxContainer/Shop" unique_id=1506699208]
-texture_filter = 1
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = SubResource("AtlasTexture_av3u1")
-metadata/_edit_lock_ = true
-
-[node name="Label" type="Label" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/HBoxContainer/Shop" unique_id=736012467]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -37.0
-offset_top = -3.0
-offset_right = -20.0
-offset_bottom = 20.0
-grow_horizontal = 0
-text = "s"
-horizontal_alignment = 2
-
-[node name="ShopButton1" type="Button" parent="UI/Container/Margin/VBoxContainer/TabBar/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/HBoxContainer/Shop" unique_id=426297549]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-disabled = true
-shortcut = SubResource("Shortcut_n8i7s")
-
-[node name="Results" type="Control" parent="UI/Container/Margin/VBoxContainer/TabBar" unique_id=1900861493]
-visible = false
-layout_mode = 2
-metadata/_tab_index = 2
 
 [node name="ToolTips" type="CanvasLayer" parent="." unique_id=1581755084]
 unique_name_in_owner = true

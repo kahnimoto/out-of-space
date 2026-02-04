@@ -62,7 +62,6 @@ const LOOT: Array[Items] = [
 	Items.BOOK_BLUE, Items.BOOK_RED, Items.BOOK_GREEN, Items.BOOK_YELLOW, Items.BOOK_BLACK, Items.BOOK_BROWN, Items.BOOK_OPEN_BLUE, Items.BOOK_OPEN_RED, Items.BOOK_READING, Items.ENVELOPE, Items.SCROLL_TIED, Items.PAPER_DOCUMENT, Items.TREASURE_MAP, Items.DICE, Items.PLAYING_CARD_ACE, Items.WINE_BOTTLE,
 ]
 
-
 const REGION_LOCATION: Dictionary[Items, Vector2i] = {
 	Items.EMPTY: Vector2i(11, 0),
 	Items.SKULL_AND_BONES: Vector2i(0, 0), Items.GREEN_FIRE_BALL: Vector2i(1, 0),
@@ -122,9 +121,10 @@ static func item_to_texture_rect(i: Items) -> Rect2:
 	
 
 func _update_item() -> void:
-	(slot_item_texture.texture as AtlasTexture).region = item_to_texture_rect(item)
+	if slot_item_texture.texture is AtlasTexture:
+		slot_item_texture.texture.region = item_to_texture_rect(item)
 
-func debug_pick_random_item(category: ItemCategories = ItemCategories.NONE) -> void:
+func pick_random_item_from_category(category: ItemCategories = ItemCategories.NONE) -> void:
 	match category:
 		ItemCategories.WEAPON:
 			item = WEAPONS.pick_random()
@@ -155,9 +155,6 @@ func _on_mouse_entered() -> void:
 func _on_mouse_exited() -> void:
 	Events.tooltip_released.emit(self)
 
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_accept"):
-		debug_pick_random_item(ItemCategories.LOOT)
 
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -166,11 +163,7 @@ func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and (event as InputEventMouseButton).button_index == MOUSE_BUTTON_LEFT:
 		var mouse_event := event as InputEventMouseButton
 		if mouse_event.button_index == MOUSE_BUTTON_LEFT:
-			if mouse_event.shift_pressed and mouse_event.pressed:
-				Events.new_item_requested.emit()
-				debug_pick_random_item()
-				Events.tooltip_requested.emit(self, item_name)
-			elif mouse_event.is_pressed() and item and item != Items.EMPTY and not Game.is_dragging:
+			if mouse_event.is_pressed() and item and item != Items.EMPTY and not Game.is_dragging:
 				Events.drag_started.emit(item, self)
 				item = Items.EMPTY
 			elif mouse_event.is_pressed() and Game.is_dragging:

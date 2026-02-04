@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bcn6c78r7cjih"]
+
+[ext_resource type="Script" uid="uid://se5lgrrx62eq" path="res://ui/slotted_item.gd" id="1_q3y4y"]
+[ext_resource type="Texture2D" uid="uid://do3dujjujwes5" path="res://resources/textures/inventory_slot_texture.tres" id="2_6okke"]
+[ext_resource type="Texture2D" uid="uid://dwd50p15er7an" path="res://assets/items_transparent_dropshadow.png" id="3_q3y4y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6okke"]
+atlas = ExtResource("3_q3y4y")
+region = Rect2(224, 160, 32, 32)
+
+[node name="Slot" type="Control" unique_id=1093646726 groups=["inventory_slot"]]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 64.0
+offset_bottom = 64.0
+script = ExtResource("1_q3y4y")
+item = 11
+
+[node name="SlotBackground" type="TextureRect" parent="." unique_id=15658140]
+self_modulate = Color(0.49803922, 1, 0.83137256, 1)
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_6okke")
+metadata/_edit_lock_ = true
+
+[node name="SlotItemTexture" type="TextureRect" parent="." unique_id=247598807]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_6okke")
+metadata/_edit_lock_ = true
