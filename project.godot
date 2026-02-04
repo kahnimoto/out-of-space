@@ -29,7 +29,7 @@ window/stretch/mode="canvas_items"
 [global_group]
 
 inventory_slot=""
-shop_slot=""
+outgoing_slot=""
 
 [physics]
 

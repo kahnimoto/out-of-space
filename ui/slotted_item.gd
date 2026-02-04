@@ -50,20 +50,20 @@ const WEAPONS: Array[Items] = [
 	Items.BOW, Items.CROSSBOW, Items.SLINGSHOT, Items.BOOMERANG, Items.STAFF_GNARLED, Items.STAFF_BLUE, Items.STAFF_RED, Items.STAFF_GREEN, Items.STAFF_YELLOW,
 ]
 
-const ARMOUR: Array[Items] = [
+const ARMOURS: Array[Items] = [
 	Items.SHIELD_WOODEN, Items.SHIELD_IRON, Items.SHIELD_KITE,
 	Items.LEATHER_CAP, Items.IRON_HELMET, Items.VIKING_HELMET, Items.GREAT_HELM, Items.IRON_CHESTPLATE, Items.STEEL_CHESTPLATE, Items.LEATHER_TUNIC, Items.HEAVY_PLATE, Items.BLUE_TUNIC, Items.GREEN_TUNIC, Items.BLACK_TROUSERS, Items.BROWN_TROUSERS, Items.BOXERS, Items.BLUE_DRESS, Items.PURPLE_CLOAK, Items.BELT,
 	Items.LEATHER_BOOTS, Items.GAUNTLETS_IRON, Items.BOOTS_LEATHER, Items.SHOES_LEATHER,
 	
 ]
 
-const FOOD: Array[Items] = [
+const FOODS: Array[Items] = [
 	Items.APPLE, Items.BANANA, Items.PEAR, Items.LEMON, Items.STRAWBERRY, Items.GRAPES, Items.CARROT, Items.CORN, Items.GARLIC, Items.TOMATO, Items.EGGPLANT, Items.CHILI_PEPPER, Items.MUSHROOM_WHITE, Items.BREAD_LOAF, Items.BAGUETTE, Items.ROAST_CHICKEN,
 	Items.CHICKEN_LEG, Items.STEAK_RAW, Items.HAM_BONE, Items.MEAT_RIB, Items.FISH_FILLET, Items.EGGS_BASKET, Items.EGG_SINGLE, Items.CHEESE_WEDGE, Items.WATER_BOTTLE, Items.HONEY_POT, Items.FLOUR_BAG, Items.SPICE_BAG, Items.CANDY, Items.CAKE_SLICE, Items.COFFEE_MUG,
 	Items.POTION_RED_S, Items.POTION_BLUE_S, Items.POTION_GREEN_S, Items.POTION_YELLOW_S, Items.FISH_BLUE, Items.FISH_BROWN, Items.EEL, Items.FISH_YELLOW, Items.CLOWNFISH, Items.JELLYFISH, Items.OCTOPUS, Items.TURTLE,
 ]
 
-const LOOT: Array[Items] = [
+const LOOTS: Array[Items] = [
 	Items.GOLD_COIN, Items.COPPER_STACK, Items.SILVER_STACK, Items.GOLD_STACK, Items.GOLD_SACK, Items.CRYSTAL_SHARDS, Items.RUBY_GEM,
 	Items.BOOK_BLUE, Items.BOOK_RED, Items.BOOK_GREEN, Items.BOOK_YELLOW, Items.BOOK_BLACK, Items.BOOK_BROWN, Items.BOOK_OPEN_BLUE, Items.BOOK_OPEN_RED, Items.BOOK_READING, Items.ENVELOPE, Items.SCROLL_TIED, Items.PAPER_DOCUMENT, Items.TREASURE_MAP, Items.DICE, Items.PLAYING_CARD_ACE, Items.WINE_BOTTLE,
 ]
@@ -98,7 +98,6 @@ const REGION_LOCATION: Dictionary[Items, Vector2i] = {
 	Items.ORB_RED: Vector2i(0, 18), Items.ORB_BLUE: Vector2i(1, 18), Items.ORB_GREEN: Vector2i(2, 18), Items.ORB_YELLOW: Vector2i(3, 18), Items.ORB_PURPLE: Vector2i(4, 18), Items.ORB_BLACK: Vector2i(5, 18),
 }
 const SIZE := 32
-const ITEMS_TRANSPARENT_DROPSHADOW = preload("uid://dwd50p15er7an")
 
 @export var item: Items = Items.EMPTY:
 	set(v):
@@ -116,8 +115,6 @@ var item_name: String:
 
 
 func _ready() -> void:
-	slot_item_texture.texture = AtlasTexture.new()
-	slot_item_texture.texture.atlas = ITEMS_TRANSPARENT_DROPSHADOW
 	_update_item()
 	slot_item_texture.mouse_entered.connect(_on_mouse_entered)
 	slot_item_texture.mouse_exited.connect(_on_mouse_exited)
@@ -142,11 +139,11 @@ func pick_random_item_from_category(category: ItemCategories = ItemCategories.NO
 		ItemCategories.WEAPON:
 			item = WEAPONS.pick_random()
 		ItemCategories.ARMOUR:
-			item = ARMOUR.pick_random()
+			item = ARMOURS.pick_random()
 		ItemCategories.FOOD:
-			item = FOOD.pick_random()
+			item = FOODS.pick_random()
 		ItemCategories.LOOT:
-			item = LOOT.pick_random()
+			item = LOOTS.pick_random()
 		ItemCategories.NONE:
 			item = pick_random_item()
 		_:
@@ -172,7 +169,6 @@ func _on_mouse_exited() -> void:
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		return
-	#print(self)
 	if event is InputEventMouseButton and (event as InputEventMouseButton).button_index == MOUSE_BUTTON_LEFT:
 		var mouse_event := event as InputEventMouseButton
 		if mouse_event.button_index == MOUSE_BUTTON_LEFT:
@@ -188,5 +184,3 @@ func _gui_input(event: InputEvent) -> void:
 				else:
 					item = Game.dragging
 					Events.drag_ended.emit()
-	elif event is InputEventMouseButton and (event as InputEventMouseButton).button_index == MOUSE_BUTTON_RIGHT:
-		item = Items.EMPTY

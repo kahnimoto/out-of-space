@@ -5,8 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://dwd50p15er7an" path="res://assets/items_transparent_dropshadow.png" id="3_q3y4y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q3y4y"]
+resource_local_to_scene = true
 atlas = ExtResource("3_q3y4y")
-region = Rect2(192, 160, 32, 32)
+region = Rect2(352, 0, 32, 32)
 
 [node name="Slot" type="Control" unique_id=1093646726 groups=["inventory_slot"]]
 custom_minimum_size = Vector2(64, 64)
@@ -15,7 +16,6 @@ anchors_preset = 0
 offset_right = 64.0
 offset_bottom = 64.0
 script = ExtResource("1_q3y4y")
-item = 11
 
 [node name="SlotBackground" type="TextureRect" parent="." unique_id=15658140]
 self_modulate = Color(0.49803922, 1, 0.83137256, 1)

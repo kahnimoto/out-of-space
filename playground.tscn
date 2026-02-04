@@ -91,10 +91,6 @@ text = "OUT OF PLACE"
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Control" type="Control" parent="UI/Container/Margin/VBoxContainer" unique_id=1228748657]
-custom_minimum_size = Vector2(0, 16)
-layout_mode = 2
-
 [node name="Game" type="Control" parent="UI/Container/Margin/VBoxContainer" unique_id=38208795]
 layout_mode = 2
 size_flags_vertical = 3
@@ -130,7 +126,7 @@ text = "Points:"
 unique_name_in_owner = true
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
-text = "10"
+text = "0"
 horizontal_alignment = 2
 
 [node name="Control2" type="Control" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer" unique_id=1341016851]
@@ -161,15 +157,10 @@ text = "[b]Instructions[/b]
 
 [b]Left click[/b] on item to pickup. Click again to place item.
 
-Button [b]1[/b] to loot new item to first available slot. Costs 1 point.
+Identify the 1-4 items that doesnt fit and move them out.
 
-[b]Right click[/b] on filled slot to discard. Discord is free.
-
-Drag items to orders to fullfill them
-and earn points.
-
-Earn as much points as possible
-before time or space is out.
+Earn points by correctly identifying them.
+Lose point by them being left behind.
 "
 
 [node name="InventoryAndAbilities" type="VBoxContainer" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer" unique_id=324731215]
@@ -182,27 +173,113 @@ columns = 6
 
 [node name="Slot" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1093646726 instance=ExtResource("3_4bqqs")]
 layout_mode = 2
-item = 15
+item = 16
 
-[node name="Slot2" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=884887684 instance=ExtResource("3_4bqqs")]
+[node name="Slot2" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1280030761 instance=ExtResource("3_4bqqs")]
 layout_mode = 2
-item = 27
+item = 32
 
-[node name="Slot3" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1348678685 instance=ExtResource("3_4bqqs")]
+[node name="Slot3" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=502525251 instance=ExtResource("3_4bqqs")]
 layout_mode = 2
-item = 41
 
-[node name="Slot4" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=471507693 instance=ExtResource("3_4bqqs")]
+[node name="Slot4" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1301555804 instance=ExtResource("3_4bqqs")]
 layout_mode = 2
-item = 25
 
-[node name="Slot5" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1086713713 instance=ExtResource("3_4bqqs")]
+[node name="Slot5" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=27604809 instance=ExtResource("3_4bqqs")]
 layout_mode = 2
-item = 23
 
-[node name="Slot6" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=730920978 instance=ExtResource("3_4bqqs")]
+[node name="Slot6" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=700904016 instance=ExtResource("3_4bqqs")]
 layout_mode = 2
-item = 37
+
+[node name="Slot7" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=238476246 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot8" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=989798316 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot9" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1630278919 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot10" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1714386697 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot11" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=76834338 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot12" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=51770444 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot13" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1439392248 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot14" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1431621679 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot15" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=182546103 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot16" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=232095778 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot17" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1444262837 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot18" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1318147898 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot19" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1174751921 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot20" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=98973888 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot21" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=2029568388 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot22" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1456523709 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot23" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1070169993 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot24" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1065945543 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot25" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1374369425 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot26" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=2037612474 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot27" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=501105044 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot28" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1249249723 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot29" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1987931378 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot30" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1955761581 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot31" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1779689158 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot32" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1317912256 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot33" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1071730152 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot34" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=578185103 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot35" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=705574355 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot36" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1589801384 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
 
 [node name="Control" type="Control" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities" unique_id=2128581378]
 custom_minimum_size = Vector2(0, 16)
@@ -239,18 +316,16 @@ grow_horizontal = 2
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 
-[node name="RoundTimer" type="ProgressBar" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer" unique_id=1379544866]
+[node name="ValueRoundTimer" type="ProgressBar" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer" unique_id=1379544866]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(256, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_styles/background = SubResource("StyleBoxFlat_te8jg")
 theme_override_styles/fill = SubResource("StyleBoxFlat_yjl7g")
-step = 1.0
-value = 89.0
 show_percentage = false
 
-[node name="Label" type="Label" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/RoundTimer" unique_id=190060390]
+[node name="Label" type="Label" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ValueRoundTimer" unique_id=190060390]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -340,3 +415,8 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 0
 text = "Sun"
+
+[node name="RoundTimer" type="Timer" parent="." unique_id=380676390]
+unique_name_in_owner = true
+wait_time = 15.0
+one_shot = true

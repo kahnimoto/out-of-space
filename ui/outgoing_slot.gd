@@ -42,7 +42,6 @@ func _on_mouse_exited() -> void:
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		return
-	#print(self)
 	if event is InputEventMouseButton and (event as InputEventMouseButton).button_index == MOUSE_BUTTON_LEFT:
 		var mouse_event := event as InputEventMouseButton
 		if mouse_event.button_index == MOUSE_BUTTON_LEFT:
@@ -58,5 +57,3 @@ func _gui_input(event: InputEvent) -> void:
 				else:
 					item = Game.dragging
 					Events.drag_ended.emit()
-	elif event is InputEventMouseButton and (event as InputEventMouseButton).button_index == MOUSE_BUTTON_RIGHT:
-		item = SlottedItem.Items.EMPTY

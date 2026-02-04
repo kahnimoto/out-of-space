@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dvk8kr67yiqnq"]
 
-[ext_resource type="Script" uid="uid://j8v3s0klj7wj" path="res://ui/OutgoingSlot.gd" id="1_2jwym"]
+[ext_resource type="Script" uid="uid://j8v3s0klj7wj" path="res://ui/outgoing_slot.gd" id="1_2jwym"]
 [ext_resource type="Texture2D" uid="uid://c2t5s25qbvegl" path="res://assets/tileset.png" id="2_i40fr"]
 [ext_resource type="Texture2D" uid="uid://dwd50p15er7an" path="res://assets/items_transparent_dropshadow.png" id="3_b8ong"]
 
@@ -13,7 +13,7 @@ resource_local_to_scene = true
 atlas = ExtResource("3_b8ong")
 region = Rect2(352, 0, 32, 32)
 
-[node name="Slot" type="Control" unique_id=2098503924 groups=["shop_slot"]]
+[node name="Slot" type="Control" unique_id=2098503924 groups=["outgoing_slot"]]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 3
 anchors_preset = 0

@@ -8,6 +8,8 @@ var slots: Array[SlottedItem] = []
 
 @onready var value_points: Label = %ValuePoints
 @onready var inventory_grid_container: GridContainer = $UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer
+@onready var round_timer: Timer = %RoundTimer
+@onready var round_timer_pg: ProgressBar = %ValueRoundTimer
 
 
 func _ready() -> void:
@@ -19,23 +21,23 @@ func _ready() -> void:
 		inventory_grid_container.add_child(s)
 		slots.append(s)
 	Game.level = self
-	fill_start_inventory()
 	Events.score_changed.connect(_on_score_changed)
+	round_timer_pg.max_value = Game.ROUND_TIME
+	round_timer.timeout.connect(Game.round_complete)
+	Events.next_round.connect(_on_round_started)
+	Game.new_round()
 
 
-func _unhandled_key_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_cancel"):
-		get_tree().quit()
-	if event.is_action_pressed("ui_accept"):
-		fill_start_inventory()
-
+func _on_round_started(time: float, fill_category: SlottedItem.ItemCategories, trick_category: SlottedItem.ItemCategories) -> void:
+	round_timer.start(time)
+	fill_inventory(fill_category, trick_category)
 
 func _process(_delta: float) -> void:
-	pass
+	round_timer_pg.value = round_timer.time_left
+
 
 func _on_score_changed(new_value: int) -> void:
 	value_points.text = str(new_value)
-
 
 
 func find_first_free_slot() -> SlottedItem:
@@ -45,14 +47,12 @@ func find_first_free_slot() -> SlottedItem:
 	return null
 
 
-func fill_start_inventory() -> void:
-	var random_category: SlottedItem.ItemCategories = SlottedItem.ItemCategories.LOOT
-	var other_category: SlottedItem.ItemCategories = SlottedItem.ItemCategories.WEAPON
+func fill_inventory(fill_category: SlottedItem.ItemCategories, trick_category: SlottedItem.ItemCategories) -> void:
 	slots.map(func(s: SlottedItem): 
-		s.pick_random_item_from_category(random_category)
-		s.set_background(random_category)
+		s.pick_random_item_from_category(fill_category)
+		s.set_background(fill_category)
 	)
 	var count_out_of_place := 4
 	for i in count_out_of_place:
 		var slot = slots.pick_random()
-		slot.pick_random_item_from_category(other_category)
+		slot.pick_random_item_from_category(trick_category)
