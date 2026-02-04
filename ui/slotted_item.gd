@@ -12,7 +12,7 @@ enum Items {
 	#SQUARE_SPEACH_BUBBLES, SPEECH_BUBBLES,
 	CAMPFIRE, TENT, # ANVIL, PICKAXE_MINING, AXE_LOGGING, BOOK_RESEARCH, RUN_FAST,
 	WOODEN_SWORD, DAGGER, SHORT_SWORD, IRON_SWORD, BROAD_SWORD, SCIMITAR, RAPIER, ESTOC, SAI, DUAL_DAGGERS, BATTLE_AXE, DOUBLE_BATTLE_AXE, MACE, WOODEN_CLUB, WHIP, FIST_GLOVE, 
-	SHIELD_WOODEN, SHIELD_IRON, SHIELD_KITE, BOW, CROSSBOW, SLINGSHOT, BOOMERANG, STAFF_GNARLED, STAFF_WIZARD, STAFF_BLUE, STAFF_RED, STAFF_GREEN, STAFF_YELLOW,
+	SHIELD_WOODEN, SHIELD_IRON, SHIELD_KITE, BOW, CROSSBOW, SLINGSHOT, BOOMERANG, STAFF_GNARLED, STAFF_BLUE, STAFF_RED, STAFF_GREEN, STAFF_YELLOW,
 	LEATHER_CAP, IRON_HELMET, VIKING_HELMET, GREAT_HELM, IRON_CHESTPLATE, STEEL_CHESTPLATE, LEATHER_TUNIC, HEAVY_PLATE, BLUE_TUNIC, GREEN_TUNIC, BLACK_TROUSERS, BROWN_TROUSERS, BOXERS, BLUE_DRESS, PURPLE_CLOAK, BELT,
 	LEATHER_BOOTS, GAUNTLETS_IRON, BOOTS_LEATHER, SHOES_LEATHER, RING_GOLD, RING_BLUE_GEM, NECKLACE_GOLD, NECKLACE_RED, NECKLACE_SILVER, BACKPACK,
 	POTION_RED_S, POTION_BLUE_S, POTION_GREEN_S, POTION_YELLOW_S, 
@@ -32,6 +32,37 @@ enum Items {
 	ORB_RED, ORB_BLUE, ORB_GREEN, ORB_YELLOW, ORB_PURPLE, ORB_BLACK
 }
 
+enum ItemCategories {
+	WEAPON,
+	ARMOUR,
+	FOOD,
+	LOOT,
+	NONE
+}
+const WEAPONS: Array[Items] = [
+	Items.WOODEN_SWORD, Items.DAGGER, Items.SHORT_SWORD, Items.IRON_SWORD, Items.BROAD_SWORD, Items.SCIMITAR, Items.RAPIER, Items.ESTOC, Items.SAI, Items.DUAL_DAGGERS, Items.BATTLE_AXE, Items.DOUBLE_BATTLE_AXE, Items.MACE, Items.WOODEN_CLUB, Items.WHIP, Items.FIST_GLOVE,
+	Items.BOW, Items.CROSSBOW, Items.SLINGSHOT, Items.BOOMERANG, Items.STAFF_GNARLED, Items.STAFF_BLUE, Items.STAFF_RED, Items.STAFF_GREEN, Items.STAFF_YELLOW,
+]
+
+const ARMOUR: Array[Items] = [
+	Items.SHIELD_WOODEN, Items.SHIELD_IRON, Items.SHIELD_KITE,
+	Items.LEATHER_CAP, Items.IRON_HELMET, Items.VIKING_HELMET, Items.GREAT_HELM, Items.IRON_CHESTPLATE, Items.STEEL_CHESTPLATE, Items.LEATHER_TUNIC, Items.HEAVY_PLATE, Items.BLUE_TUNIC, Items.GREEN_TUNIC, Items.BLACK_TROUSERS, Items.BROWN_TROUSERS, Items.BOXERS, Items.BLUE_DRESS, Items.PURPLE_CLOAK, Items.BELT,
+	Items.LEATHER_BOOTS, Items.GAUNTLETS_IRON, Items.BOOTS_LEATHER, Items.SHOES_LEATHER,
+	
+]
+
+const FOOD: Array[Items] = [
+	Items.APPLE, Items.BANANA, Items.PEAR, Items.LEMON, Items.STRAWBERRY, Items.GRAPES, Items.CARROT, Items.CORN, Items.GARLIC, Items.TOMATO, Items.EGGPLANT, Items.CHILI_PEPPER, Items.MUSHROOM_WHITE, Items.BREAD_LOAF, Items.BAGUETTE, Items.ROAST_CHICKEN,
+	Items.CHICKEN_LEG, Items.STEAK_RAW, Items.HAM_BONE, Items.MEAT_RIB, Items.FISH_FILLET, Items.EGGS_BASKET, Items.EGG_SINGLE, Items.CHEESE_WEDGE, Items.WATER_BOTTLE, Items.HONEY_POT, Items.FLOUR_BAG, Items.SPICE_BAG, Items.CANDY, Items.CAKE_SLICE, Items.COFFEE_MUG,
+	Items.POTION_RED_S, Items.POTION_BLUE_S, Items.POTION_GREEN_S, Items.POTION_YELLOW_S, Items.FISH_BLUE, Items.FISH_BROWN, Items.EEL, Items.FISH_YELLOW, Items.CLOWNFISH, Items.JELLYFISH, Items.OCTOPUS, Items.TURTLE,
+]
+
+const LOOT: Array[Items] = [
+	Items.GOLD_COIN, Items.COPPER_STACK, Items.SILVER_STACK, Items.GOLD_STACK, Items.GOLD_SACK, Items.CRYSTAL_SHARDS, Items.RUBY_GEM,
+	Items.BOOK_BLUE, Items.BOOK_RED, Items.BOOK_GREEN, Items.BOOK_YELLOW, Items.BOOK_BLACK, Items.BOOK_BROWN, Items.BOOK_OPEN_BLUE, Items.BOOK_OPEN_RED, Items.BOOK_READING, Items.ENVELOPE, Items.SCROLL_TIED, Items.PAPER_DOCUMENT, Items.TREASURE_MAP, Items.DICE, Items.PLAYING_CARD_ACE, Items.WINE_BOTTLE,
+]
+
+
 const REGION_LOCATION: Dictionary[Items, Vector2i] = {
 	Items.EMPTY: Vector2i(11, 0),
 	Items.SKULL_AND_BONES: Vector2i(0, 0), Items.GREEN_FIRE_BALL: Vector2i(1, 0),
@@ -43,7 +74,7 @@ const REGION_LOCATION: Dictionary[Items, Vector2i] = {
 	Items.CAMPFIRE: Vector2i(2, 4), Items.TENT: Vector2i(3, 4), # Items.ANVIL: Vector2i(4, 4), Items.PICKAXE_MINING: Vector2i(5, 4), Items.AXE_LOGGING: Vector2i(6, 4), Items.BOOK_RESEARCH: Vector2i(7, 4), Items.RUN_FAST: Vector2i(8, 4),
 	Items.WOODEN_SWORD: Vector2i(0, 5), Items.DAGGER: Vector2i(1, 5), Items.SHORT_SWORD: Vector2i(2, 5), Items.IRON_SWORD: Vector2i(3, 5), Items.BROAD_SWORD: Vector2i(4, 5), Items.SCIMITAR: Vector2i(5, 5), Items.RAPIER: Vector2i(6, 5), Items.ESTOC: Vector2i(7, 5), Items.SAI: Vector2i(8, 5), Items.DUAL_DAGGERS: Vector2i(9, 5),
 	Items.BATTLE_AXE: Vector2i(11, 5), Items.DOUBLE_BATTLE_AXE: Vector2i(11, 5), Items.MACE: Vector2i(12, 5), Items.WOODEN_CLUB: Vector2i(13, 5), Items.WHIP: Vector2i(14, 5), Items.FIST_GLOVE: Vector2i(15, 5),
-	Items.SHIELD_WOODEN: Vector2i(0, 6), Items.SHIELD_IRON: Vector2i(1, 6), Items.SHIELD_KITE: Vector2i(2, 6), Items.BOW: Vector2i(3, 6), Items.CROSSBOW: Vector2i(4, 6), Items.SLINGSHOT: Vector2i(5, 6), Items.BOOMERANG: Vector2i(6, 6), Items.STAFF_GNARLED: Vector2i(7, 6), Items.STAFF_WIZARD: Vector2i(8, 6), Items.STAFF_BLUE: Vector2i(9, 6), Items.STAFF_RED: Vector2i(10, 6), Items.STAFF_GREEN: Vector2i(11, 6), Items.STAFF_YELLOW: Vector2i(12, 6),
+	Items.SHIELD_WOODEN: Vector2i(0, 6), Items.SHIELD_IRON: Vector2i(1, 6), Items.SHIELD_KITE: Vector2i(2, 6), Items.BOW: Vector2i(3, 6), Items.CROSSBOW: Vector2i(4, 6), Items.SLINGSHOT: Vector2i(5, 6), Items.BOOMERANG: Vector2i(6, 6), Items.STAFF_GNARLED: Vector2i(7, 6), Items.STAFF_BLUE: Vector2i(8, 6), Items.STAFF_RED: Vector2i(9, 6), Items.STAFF_GREEN: Vector2i(10, 6), Items.STAFF_YELLOW: Vector2i(11, 6),
 	Items.LEATHER_CAP: Vector2i(0, 7), Items.IRON_HELMET: Vector2i(1, 7), Items.VIKING_HELMET: Vector2i(2, 7), Items.GREAT_HELM: Vector2i(3, 7), Items.IRON_CHESTPLATE: Vector2i(4, 7), Items.STEEL_CHESTPLATE: Vector2i(5, 7), Items.LEATHER_TUNIC: Vector2i(6, 7), Items.HEAVY_PLATE: Vector2i(7, 7), Items.BLUE_TUNIC: Vector2i(8, 7), Items.GREEN_TUNIC: Vector2i(9, 7), Items.BLACK_TROUSERS: Vector2i(10, 7), Items.BROWN_TROUSERS: Vector2i(11, 7), Items.BOXERS: Vector2i(12, 7), Items.BLUE_DRESS: Vector2i(13, 7), Items.PURPLE_CLOAK: Vector2i(14, 7), Items.BELT: Vector2i(15, 7),
 	Items.LEATHER_BOOTS: Vector2i(0, 8), Items.GAUNTLETS_IRON: Vector2i(1, 8), Items.BOOTS_LEATHER: Vector2i(2, 8), Items.SHOES_LEATHER: Vector2i(3, 8), Items.RING_GOLD: Vector2i(4, 8), Items.RING_BLUE_GEM: Vector2i(5, 8), Items.NECKLACE_GOLD: Vector2i(6, 8), Items.NECKLACE_RED: Vector2i(7, 8), Items.NECKLACE_SILVER: Vector2i(8, 8), Items.BACKPACK: Vector2i(9, 8),
 	Items.POTION_RED_S: Vector2i(0, 9), Items.POTION_BLUE_S: Vector2i(1, 9), Items.POTION_GREEN_S: Vector2i(2, 9), Items.POTION_YELLOW_S: Vector2i(3, 9), 
@@ -75,24 +106,45 @@ var item_name: String:
 		return Items.keys()[item].capitalize()
 
 @onready var slot_item_texture: TextureRect = $SlotItemTexture
+@onready var slot_background: TextureRect = $SlotBackground
 
 
 func _ready() -> void:
 	_update_item()
 	slot_item_texture.mouse_entered.connect(_on_mouse_entered)
 	slot_item_texture.mouse_exited.connect(_on_mouse_exited)
+	slot_background.self_modulate = Color.AQUAMARINE
 
+
+static func item_to_texture_rect(i: Items) -> Rect2:
+	var start_coord = REGION_LOCATION[i] * SIZE as Vector2
+	return Rect2(start_coord, Vector2(SIZE, SIZE))
+	
 
 func _update_item() -> void:
-	var start_coord = REGION_LOCATION[item] * SIZE as Vector2
-	(slot_item_texture.texture as AtlasTexture).region = Rect2(start_coord, Vector2(SIZE, SIZE))
+	(slot_item_texture.texture as AtlasTexture).region = item_to_texture_rect(item)
+
+func debug_pick_random_item(category: ItemCategories = ItemCategories.NONE) -> void:
+	match category:
+		ItemCategories.WEAPON:
+			item = WEAPONS.pick_random()
+		ItemCategories.ARMOUR:
+			item = ARMOUR.pick_random()
+		ItemCategories.FOOD:
+			item = FOOD.pick_random()
+		ItemCategories.LOOT:
+			item = LOOT.pick_random()
+		ItemCategories.NONE:
+			item = pick_random_item()
+		_:
+			item = pick_random_item()
 
 
-func debug_pick_random_item() -> void:
-	item = Items.values().pick_random()
-	while item == Items.EMPTY:
-		item = Items.values().pick_random()
-
+static func pick_random_item() -> Items:
+	var random_item = Items.values().pick_random()
+	while random_item == Items.EMPTY:
+		random_item = Items.values().pick_random()
+	return random_item
 
 func _on_mouse_entered() -> void:
 	if not item or item == Items.EMPTY or Game.is_dragging:
@@ -102,6 +154,10 @@ func _on_mouse_entered() -> void:
 
 func _on_mouse_exited() -> void:
 	Events.tooltip_released.emit(self)
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_accept"):
+		debug_pick_random_item(ItemCategories.LOOT)
 
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:

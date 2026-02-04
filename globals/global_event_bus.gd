@@ -10,3 +10,6 @@ signal drag_started(item: SlottedItem.Items, source: SlottedItem)
 signal drag_ended()
 signal drag_aborted()
 signal player_looted
+signal shop_opens
+signal player_completed_sale
+signal shop_closes
