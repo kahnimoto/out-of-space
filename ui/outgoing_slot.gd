@@ -48,12 +48,16 @@ func _gui_input(event: InputEvent) -> void:
 			if mouse_event.is_pressed() and item and item != SlottedItem.Items.EMPTY and not Game.is_dragging:
 				Events.drag_started.emit(item, self)
 				item = SlottedItem.Items.EMPTY
+				
+				Sounds.grab()
 			elif mouse_event.is_pressed() and Game.is_dragging:
 				if item:
 					var old_item = item
 					item = Game.dragging
 					Events.drag_ended.emit()
 					Events.drag_started.emit(old_item, self)
+					Sounds.grab()
 				else:
+					Sounds.put_down()
 					item = Game.dragging
 					Events.drag_ended.emit()

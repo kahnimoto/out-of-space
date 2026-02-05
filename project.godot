@@ -19,6 +19,7 @@ config/icon="res://assets/icon.svg"
 
 Events="*uid://dxdjvg50xbm6n"
 Game="*uid://b7wmf11fa4p0u"
+Sounds="*uid://bs737oh2o4qh1"
 
 [display]
 
@@ -32,6 +33,15 @@ window/stretch/mode="canvas_items"
 
 inventory_slot=""
 outgoing_slot=""
+
+[input]
+
+click={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
+, Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":2,"canceled":false,"pressed":false,"double_click":false,"script":null)
+]
+}
 
 [physics]
 

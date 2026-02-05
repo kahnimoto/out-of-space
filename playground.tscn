@@ -47,9 +47,11 @@ Label/constants/line_spacing = 0
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_4bqqs")
 
 [node name="Playground" type="Node" unique_id=847819684]
+process_mode = 3
 script = ExtResource("1_4bqqs")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=998342668]
+process_mode = 1
 
 [node name="Container" type="Control" parent="UI" unique_id=1019630975]
 layout_mode = 3
@@ -132,6 +134,19 @@ layout_mode = 2
 alignment = 1
 
 [node name="LabelPoints" type="Label" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/PointsContainer" unique_id=1291749300]
+layout_mode = 2
+text = "Round:"
+
+[node name="ValueRounds" type="Label" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/PointsContainer" unique_id=1015564524]
+unique_name_in_owner = true
+layout_mode = 2
+text = "1"
+
+[node name="Control" type="Control" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/PointsContainer" unique_id=80392571]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="LabelPoints2" type="Label" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/PointsContainer" unique_id=316869432]
 layout_mode = 2
 text = "Points:"
 
@@ -397,6 +412,7 @@ icon = SubResource("AtlasTexture_pi42a")
 
 [node name="ToolTips" type="CanvasLayer" parent="." unique_id=1581755084]
 unique_name_in_owner = true
+process_mode = 1
 script = ExtResource("7_ynsuh")
 
 [node name="DragContainer" type="Control" parent="ToolTips" unique_id=1000011651]
@@ -443,7 +459,55 @@ layout_mode = 2
 size_flags_horizontal = 0
 text = "Sun"
 
+[node name="Message" type="CanvasLayer" parent="." unique_id=626984872]
+unique_name_in_owner = true
+layer = 998
+
+[node name="Control" type="Control" parent="Message" unique_id=1623629686]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Message/Control" unique_id=1300923095]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -205.0
+offset_top = -20.0
+offset_right = 205.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Message/Control/PanelContainer" unique_id=587101895]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 8
+
+[node name="ValueMessage" type="Label" parent="Message/Control/PanelContainer/MarginContainer" unique_id=1511771406]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "Press <SPACE> or Click to start"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="RoundTimer" type="Timer" parent="." unique_id=380676390]
 unique_name_in_owner = true
+process_mode = 1
 wait_time = 15.0
 one_shot = true

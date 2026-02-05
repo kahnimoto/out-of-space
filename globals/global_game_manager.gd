@@ -1,6 +1,6 @@
 extends Node
 
-
+const MAX_ROUNDS := 5
 const ROUND_TIME := 15.0
 
 var score := 0:
@@ -18,6 +18,20 @@ var recycled := false
 var correct := 0
 var wrong := 0
 var scored := false
+var rounds := 1
+var game_completed := false
+
+
+func reset_game() -> void:
+	game_completed = false
+	rounds = 1
+	wrong = 0
+	correct = 0
+	score = 0
+	scored = false
+	recycled = false
+	dragging = SlottedItem.Items.EMPTY
+	is_dragging = false
 
 
 func _ready() -> void:
@@ -61,11 +75,14 @@ func _on_items_combined(_item: SlottedItem.Items) -> void:
 func _on_recycle() -> void:
 	_recycle() 
 	if correct == 4 and wrong == 0:
+		Sounds.recycle()
 		recycled = true
 		scored = true
 		score += 4
 		for os in get_tree().get_nodes_in_group("outgoing_slot"):
 			os.item = SlottedItem.Items.EMPTY
+	else:
+		Sounds.error()
 
 
 func _recycle() -> void:
@@ -113,6 +130,7 @@ func new_round() -> void:
 	scored = false
 	fill_category = pick_random_category()
 	trick_category = pick_random_category(fill_category)
+	Sounds.refresh_inventory()
 	Events.next_round.emit(ROUND_TIME, fill_category, trick_category)
 
 
@@ -120,9 +138,16 @@ func round_complete() -> void:
 	Events.drag_aborted.emit()
 	if not recycled:
 		_recycle()
+		if correct < 4:
+			Sounds.error()
 	if not scored:
 		score = max(0, score + correct - wrong)
 		for os in get_tree().get_nodes_in_group("outgoing_slot"):
 			os.item = SlottedItem.Items.EMPTY
 	Events.round_complete.emit(correct, wrong)
-	new_round()
+	if rounds < MAX_ROUNDS:
+		rounds += 1
+		new_round()
+	else:
+		game_completed = true
+		Events.game_complete.emit()

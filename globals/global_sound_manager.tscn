@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bs737oh2o4qh1"]
+
+[ext_resource type="Script" uid="uid://dqti5f83p3wyt" path="res://globals/global_sound_manager.gd" id="1_rnyyl"]
+[ext_resource type="AudioStream" uid="uid://cmo2j3kv51rvw" path="res://assets/sounds/refresh.mp3" id="2_h6lrm"]
+[ext_resource type="AudioStream" uid="uid://sff0u85xp7u0" path="res://assets/sounds/sword_cut.mp3" id="3_ofw6i"]
+[ext_resource type="AudioStream" uid="uid://b8af2obwxr8xw" path="res://assets/sounds/error.mp3" id="4_h6lrm"]
+[ext_resource type="AudioStream" uid="uid://bqmc80vl6n5nu" path="res://assets/sounds/grab_1.mp3" id="5_no4mr"]
+[ext_resource type="AudioStream" uid="uid://bwefm3rkf0uga" path="res://assets/sounds/grab_2.mp3" id="6_dp53n"]
+[ext_resource type="AudioStream" uid="uid://3kfb2pwveink" path="res://assets/sounds/reward.mp3" id="7_dp53n"]
+
+[node name="Node" type="Node" unique_id=375748915]
+script = ExtResource("1_rnyyl")
+
+[node name="AudioRefresh" type="AudioStreamPlayer" parent="." unique_id=341349511]
+stream = ExtResource("2_h6lrm")
+
+[node name="AudioRecycle" type="AudioStreamPlayer" parent="." unique_id=1047982756]
+stream = ExtResource("3_ofw6i")
+
+[node name="AudioError" type="AudioStreamPlayer" parent="." unique_id=1613514293]
+stream = ExtResource("4_h6lrm")
+volume_db = -24.87
+
+[node name="AudioGrab" type="AudioStreamPlayer" parent="." unique_id=489874766]
+stream = ExtResource("5_no4mr")
+
+[node name="AudioPutDown" type="AudioStreamPlayer" parent="." unique_id=467210695]
+stream = ExtResource("6_dp53n")
+
+[node name="AudioMerge" type="AudioStreamPlayer" parent="." unique_id=1343363297]
+stream = ExtResource("7_dp53n")
