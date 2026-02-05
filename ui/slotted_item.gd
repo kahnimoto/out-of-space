@@ -31,7 +31,6 @@ enum Items {
 	LOG_WOOD, STONE_BLOCK, ORE_BLUE, GOLD_BAR, DIAMOND, COTTON_BOLL, YARN_BALL, FABRIC_ROLL, LEATHER_HIDE, MONSTER_TOOTH, FEATHER,
 	ORB_RED, ORB_BLUE, ORB_GREEN, ORB_YELLOW, ORB_PURPLE, ORB_BLACK
 }
-
 enum ItemCategories {
 	WEAPON,
 	ARMOUR,
@@ -39,6 +38,7 @@ enum ItemCategories {
 	LOOT,
 	NONE
 }
+
 const CategoryToColor: Dictionary[ItemCategories, Color] = {
 	ItemCategories.WEAPON: Color.AQUAMARINE,
 	ItemCategories.ARMOUR: Color.DARK_SEA_GREEN,
@@ -134,6 +134,7 @@ func _update_item() -> void:
 	if slot_item_texture.texture is AtlasTexture:
 		slot_item_texture.texture.region = item_to_texture_rect(item)
 
+
 func pick_random_item_from_category(category: ItemCategories = ItemCategories.NONE) -> void:
 	match category:
 		ItemCategories.WEAPON:
@@ -156,6 +157,7 @@ static func pick_random_item() -> Items:
 		random_item = Items.values().pick_random()
 	return random_item
 
+
 func _on_mouse_entered() -> void:
 	if not item or item == Items.EMPTY or Game.is_dragging:
 		return
@@ -176,7 +178,12 @@ func _gui_input(event: InputEvent) -> void:
 				Events.drag_started.emit(item, self)
 				item = Items.EMPTY
 			elif mouse_event.is_pressed() and Game.is_dragging:
-				if item:
+				if item and item == Game.dragging and Game.recycled:
+					Events.items_combined.emit(item)
+					item = SlottedItem.Items.EMPTY
+					Game.dragging = SlottedItem.Items.EMPTY
+					Events.drag_ended.emit()
+				elif item:
 					var old_item = item
 					item = Game.dragging
 					Events.drag_ended.emit()

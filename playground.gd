@@ -10,10 +10,11 @@ var slots: Array[SlottedItem] = []
 @onready var inventory_grid_container: GridContainer = $UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer
 @onready var round_timer: Timer = %RoundTimer
 @onready var round_timer_pg: ProgressBar = %ValueRoundTimer
+@onready var recycle_button: Button = %RecycleButton
+@onready var shop_inventory: GridContainer = %ShopInventory
 
 
 func _ready() -> void:
-	#for child:SlottedItem in get_tree().get_nodes_in_group("inventory_slot"):
 	for child in inventory_grid_container.get_children():
 		child.queue_free()
 	for _i in SLOT_COUNT:
@@ -26,14 +27,18 @@ func _ready() -> void:
 	round_timer.timeout.connect(Game.round_complete)
 	Events.next_round.connect(_on_round_started)
 	Game.new_round()
+	recycle_button.pressed.connect(Events.recycle.emit)
 
 
 func _on_round_started(time: float, fill_category: SlottedItem.ItemCategories, trick_category: SlottedItem.ItemCategories) -> void:
 	round_timer.start(time)
 	fill_inventory(fill_category, trick_category)
 
+
 func _process(_delta: float) -> void:
 	round_timer_pg.value = round_timer.time_left
+	recycle_button.disabled = Game.recycled
+	shop_inventory.get_children().map(func(n): n.modulate = Color.DARK_GREEN if Game.recycled else Color.WHITE)
 
 
 func _on_score_changed(new_value: int) -> void:
@@ -53,6 +58,10 @@ func fill_inventory(fill_category: SlottedItem.ItemCategories, trick_category: S
 		s.set_background(fill_category)
 	)
 	var count_out_of_place := 4
-	for i in count_out_of_place:
-		var slot = slots.pick_random()
+	var filling_slots = []
+	while filling_slots.size() < count_out_of_place:
+		var picked = slots.pick_random()
+		if picked not in filling_slots:
+			filling_slots.append(picked)
+	for slot in filling_slots:
 		slot.pick_random_item_from_category(trick_category)

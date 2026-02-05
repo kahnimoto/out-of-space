@@ -4,6 +4,7 @@
 [ext_resource type="Theme" uid="uid://dfufxhx5hni20" path="res://ui/theme.tres" id="1_rupst"]
 [ext_resource type="PackedScene" uid="uid://bcn6c78r7cjih" path="res://ui/slot.tscn" id="3_4bqqs"]
 [ext_resource type="PackedScene" uid="uid://dvk8kr67yiqnq" path="res://ui/outgoing_slot.tscn" id="4_o00ia"]
+[ext_resource type="Texture2D" uid="uid://dwd50p15er7an" path="res://assets/items_transparent_dropshadow.png" id="5_4bqqs"]
 [ext_resource type="Script" uid="uid://ca61pwl6g0vse" path="res://ui/tool_tips.gd" id="7_ynsuh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_te8jg"]
@@ -11,6 +12,18 @@ bg_color = Color(1, 1, 1, 0.15686275)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yjl7g"]
 bg_color = Color(0.34081984, 0.687168, 0.43022972, 1)
+
+[sub_resource type="InputEventKey" id="InputEventKey_ynsuh"]
+device = -1
+keycode = 32
+unicode = 32
+
+[sub_resource type="Shortcut" id="Shortcut_v7dth"]
+events = [SubResource("InputEventKey_ynsuh")]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pi42a"]
+atlas = ExtResource("5_4bqqs")
+region = Rect2(192, 64, 32, 32)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pi42a"]
 load_path = "res://.godot/imported/items_transparent_dropshadow.png-b8942f16d5dcfac610d1c4379faf7577.ctex"
@@ -146,21 +159,27 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = 23.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/default_color = Color(0.50928617, 0.50928617, 0.50928617, 1)
 theme_override_font_sizes/normal_font_size = 12
 theme_override_font_sizes/bold_font_size = 14
 bbcode_enabled = true
-text = "[b]Instructions[/b]
+text = "
+[b]Instructions[/b]
 
-[b]Left click[/b] on item to pickup. Click again to place item.
 
-Identify the 1-4 items that doesnt fit and move them out.
+[b]Left click[/b] on item to pickup.
+Click again to place item.
 
-Earn points by correctly identifying them.
-Lose point by them being left behind.
+Identify the 4 items that doesnt fit and move them out to recycle bin.
+
+Click button or press [b]Space[/b] to attempt
+to recycle.
+
+With 4 items removed, merge duplicates for large bonus points.
+
 "
 
 [node name="InventoryAndAbilities" type="VBoxContainer" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer" unique_id=324731215]
@@ -367,6 +386,14 @@ layout_mode = 2
 [node name="Control2" type="Control" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer" unique_id=251548345]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
+
+[node name="RecycleButton" type="Button" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer" unique_id=1052125860]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+shortcut = SubResource("Shortcut_v7dth")
+icon = SubResource("AtlasTexture_pi42a")
 
 [node name="ToolTips" type="CanvasLayer" parent="." unique_id=1581755084]
 unique_name_in_owner = true

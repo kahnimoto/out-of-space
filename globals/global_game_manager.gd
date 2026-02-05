@@ -1,5 +1,6 @@
 extends Node
 
+
 const ROUND_TIME := 15.0
 
 var score := 0:
@@ -7,17 +8,24 @@ var score := 0:
 		if score != v:
 			score = v
 			Events.score_changed.emit(v)
-
 var is_dragging := false
 var dragging: SlottedItem.Items
 var dragging_from: Object
 var level: Level
+var fill_category: SlottedItem.ItemCategories = SlottedItem.ItemCategories.LOOT
+var trick_category: SlottedItem.ItemCategories = SlottedItem.ItemCategories.WEAPON
+var recycled := false
+var correct := 0
+var wrong := 0
+var scored := false
 
 
 func _ready() -> void:
 	Events.drag_started.connect(_on_drag_started)
 	Events.drag_ended.connect(_on_drag_ended)
 	Events.drag_aborted.connect(_on_drag_aborted)
+	Events.items_combined.connect(_on_items_combined)
+	Events.recycle.connect(_on_recycle)
 
 
 func _input(event: InputEvent) -> void:
@@ -25,8 +33,7 @@ func _input(event: InputEvent) -> void:
 		Events.drag_aborted.emit()
 	if event.is_action_pressed("ui_cancel"):
 		get_tree().quit()
-	if event.is_action_pressed("ui_accept"):
-		round_complete()
+
 
 func _process(_delta: float) -> void:
 	pass
@@ -47,32 +54,23 @@ func _on_drag_aborted() -> void:
 	dragging_from.item = dragging
 
 
-var fill_category: SlottedItem.ItemCategories = SlottedItem.ItemCategories.LOOT
-var trick_category: SlottedItem.ItemCategories = SlottedItem.ItemCategories.WEAPON
+func _on_items_combined(_item: SlottedItem.Items) -> void:
+	score += 4
 
-func pick_random_category(avoiding: SlottedItem.ItemCategories = SlottedItem.ItemCategories.NONE) -> SlottedItem.ItemCategories:
-	var a = [
-		SlottedItem.ItemCategories.WEAPON,
-		SlottedItem.ItemCategories.ARMOUR,
-		SlottedItem.ItemCategories.LOOT,
-		SlottedItem.ItemCategories.FOOD,
-	]
-	if avoiding != SlottedItem.ItemCategories.NONE:
-		a.erase(avoiding)
-	return a.pick_random()
 
-func new_round() -> void:
-	fill_category = pick_random_category()
-	trick_category = pick_random_category(fill_category)
-	Events.next_round.emit(ROUND_TIME, fill_category, trick_category)
-	
+func _on_recycle() -> void:
+	_recycle() 
+	if correct == 4 and wrong == 0:
+		recycled = true
+		scored = true
+		score += 4
+		for os in get_tree().get_nodes_in_group("outgoing_slot"):
+			os.item = SlottedItem.Items.EMPTY
 
-func round_complete() -> void:
-	Events.drag_aborted.emit()
-	# calulate winnings
-	var correct := 0
-	var wrong := 0
-	
+
+func _recycle() -> void:
+	correct = 0
+	wrong = 0
 	for os in get_tree().get_nodes_in_group("outgoing_slot"):
 		if os.item != SlottedItem.Items.EMPTY:
 			match trick_category:
@@ -96,9 +94,35 @@ func round_complete() -> void:
 						correct += 1
 					else:
 						wrong += 1
-		os.item = SlottedItem.Items.EMPTY
 	
-	score = max(0, score + correct - wrong)
-	#print("CORRECT: %d  -  WRONG: %d " % [correct, wrong])
+
+func pick_random_category(avoiding: SlottedItem.ItemCategories = SlottedItem.ItemCategories.NONE) -> SlottedItem.ItemCategories:
+	var a = [
+		SlottedItem.ItemCategories.WEAPON,
+		SlottedItem.ItemCategories.ARMOUR,
+		SlottedItem.ItemCategories.LOOT,
+		SlottedItem.ItemCategories.FOOD,
+	]
+	if avoiding != SlottedItem.ItemCategories.NONE:
+		a.erase(avoiding)
+	return a.pick_random()
+
+
+func new_round() -> void:
+	recycled = false
+	scored = false
+	fill_category = pick_random_category()
+	trick_category = pick_random_category(fill_category)
+	Events.next_round.emit(ROUND_TIME, fill_category, trick_category)
+
+
+func round_complete() -> void:
+	Events.drag_aborted.emit()
+	if not recycled:
+		_recycle()
+	if not scored:
+		score = max(0, score + correct - wrong)
+		for os in get_tree().get_nodes_in_group("outgoing_slot"):
+			os.item = SlottedItem.Items.EMPTY
 	Events.round_complete.emit(correct, wrong)
 	new_round()
