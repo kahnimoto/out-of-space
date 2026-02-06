@@ -33,7 +33,6 @@ func _ready() -> void:
 	round_timer_pg.max_value = Game.ROUND_TIME
 	round_timer.timeout.connect(Game.round_complete)
 	Events.next_round.connect(_on_round_started)
-	Game.new_round()
 	recycle_button.pressed.connect(Events.recycle.emit)
 	Events.game_complete.connect(_on_game_complete)
 	get_tree().paused = true
@@ -57,6 +56,7 @@ func _on_items_combined(_item: SlottedItem.Items, _slot: SlottedItem) -> void:
 
 
 func _on_game_complete() -> void:
+	clear_inventory()
 	value_message.text = "In %d rounds you scored %d points. Go again?" % [Game.rounds, Game.score]
 	get_tree().paused = true
 	game_locked = true
@@ -67,7 +67,7 @@ func _on_game_complete() -> void:
 func _input(event: InputEvent) -> void:
 	if not game_locked and (event.is_action("ui_accept") or event.is_action_pressed("click")) and get_tree().paused:
 		get_tree().paused = false
-		if Game.game_completed:
+		if not Game.game_started or Game.game_completed:
 			Game.reset_game()
 			Game.new_round()
 
@@ -95,6 +95,11 @@ func find_first_free_slot() -> SlottedItem:
 		return slots[ind]
 	return null
 
+
+func clear_inventory() -> void:
+	slots.map(func(s: SlottedItem): 
+		s.item = SlottedItem.Items.EMPTY
+	)
 
 func fill_inventory(fill_category: SlottedItem.ItemCategories, trick_category: SlottedItem.ItemCategories) -> void:
 	slots.map(func(s: SlottedItem): 

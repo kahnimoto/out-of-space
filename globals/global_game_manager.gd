@@ -20,9 +20,11 @@ var wrong := 0
 var scored := false
 var rounds := 1
 var game_completed := false
+var game_started := false
 
 
 func reset_game() -> void:
+	game_started = false
 	game_completed = false
 	rounds = 1
 	wrong = 0
@@ -43,8 +45,6 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if Game.is_dragging and event is InputEventMouseButton and (event as InputEventMouseButton).button_index == MOUSE_BUTTON_RIGHT:
-		Events.drag_aborted.emit()
 	if event.is_action_pressed("ui_cancel"):
 		get_tree().quit()
 
@@ -126,6 +126,7 @@ func pick_random_category(avoiding: SlottedItem.ItemCategories = SlottedItem.Ite
 
 
 func new_round() -> void:
+	game_started = true
 	recycled = false
 	scored = false
 	fill_category = pick_random_category()

@@ -182,7 +182,7 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="RichTextLabel" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InstructionsContainer" unique_id=2103867639]
+[node name="LabelInstructions" type="RichTextLabel" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InstructionsContainer" unique_id=2103867639]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -198,8 +198,9 @@ text = "
 [b]Instructions[/b]
 
 
-[b]Left click[/b] on item to pickup.
-Click again to place item.
+[b]Left click[/b] on item to pickup. Click again to place item.
+
+[b]Right click[/b] to quick move item to recycle.
 
 Identify the 4 items that doesnt fit and move them out to recycle bin.
 
@@ -503,19 +504,12 @@ hue_variation_max = 0.4
 [node name="Message" type="CanvasLayer" parent="." unique_id=626984872]
 unique_name_in_owner = true
 layer = 998
-visible = false
 
 [node name="Control" type="Control" parent="Message" unique_id=1623629686]
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -544,7 +538,7 @@ theme_override_constants/margin_bottom = 8
 unique_name_in_owner = true
 layout_mode = 2
 theme_type_variation = &"HeaderLarge"
-text = "Press <SPACE> or Click to start"
+text = "Press click to start"
 horizontal_alignment = 1
 vertical_alignment = 1
 
