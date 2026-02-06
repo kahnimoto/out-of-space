@@ -74,7 +74,7 @@ func _on_items_combined(_item: SlottedItem.Items, _slot: SlottedItem) -> void:
 
 func _on_game_complete() -> void:
 	clear_inventory()
-	value_message.text = "In %d rounds you scored %d points. Go again?" % [Game.rounds, Game.score]
+	value_message.text = "In %d rounds you scored %d points. Go again?" % [Game.active_round.nr, Game.score]
 	get_tree().paused = true
 	game_locked = true
 	await get_tree().create_timer(1.0).timeout
