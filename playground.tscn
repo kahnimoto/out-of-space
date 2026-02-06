@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bcn6c78r7cjih" path="res://ui/slot.tscn" id="3_4bqqs"]
 [ext_resource type="PackedScene" uid="uid://dvk8kr67yiqnq" path="res://ui/outgoing_slot.tscn" id="4_o00ia"]
 [ext_resource type="Texture2D" uid="uid://dwd50p15er7an" path="res://assets/items_transparent_dropshadow.png" id="5_4bqqs"]
+[ext_resource type="Texture2D" uid="uid://c2t5s25qbvegl" path="res://assets/tileset.png" id="7_v7dth"]
 [ext_resource type="Script" uid="uid://ca61pwl6g0vse" path="res://ui/tool_tips.gd" id="7_ynsuh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_te8jg"]
@@ -58,6 +59,10 @@ point_count = 2
 [sub_resource type="Gradient" id="Gradient_v7dth"]
 offsets = PackedFloat32Array(0, 0.25827813, 1)
 colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pio1y"]
+atlas = ExtResource("7_v7dth")
+region = Rect2(68, 34, 28, 29)
 
 [node name="Playground" type="Node" unique_id=847819684]
 process_mode = 3
@@ -113,7 +118,7 @@ size_flags_horizontal = 3
 [node name="Label" type="Label" parent="UI/Container/Margin/VBoxContainer/Header/HBoxContainer" unique_id=728380566]
 layout_mode = 2
 theme_type_variation = &"HeaderLarge"
-text = "OUT OF PLACE"
+text = "OUT OF SPACE"
 
 [node name="Control2" type="Control" parent="UI/Container/Margin/VBoxContainer/Header/HBoxContainer" unique_id=1019333745]
 layout_mode = 2
@@ -501,9 +506,22 @@ color_ramp = SubResource("Gradient_v7dth")
 hue_variation_min = -0.4
 hue_variation_max = 0.4
 
+[node name="ShinyFlash" type="TextureRect" parent="Node" unique_id=1885904312]
+unique_name_in_owner = true
+self_modulate = Color(1.8247963, 1.4684368, 0, 1)
+anchors_preset = -1
+offset_left = 725.0
+offset_top = 184.0
+offset_right = 887.0
+offset_bottom = 344.0
+pivot_offset = Vector2(80, 80)
+mouse_filter = 2
+texture = SubResource("AtlasTexture_pio1y")
+
 [node name="Message" type="CanvasLayer" parent="." unique_id=626984872]
 unique_name_in_owner = true
 layer = 998
+visible = false
 
 [node name="Control" type="Control" parent="Message" unique_id=1623629686]
 layout_mode = 3

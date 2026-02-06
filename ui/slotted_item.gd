@@ -59,7 +59,7 @@ const ARMOURS: Array[Items] = [
 
 const FOODS: Array[Items] = [
 	Items.APPLE, Items.BANANA, Items.PEAR, Items.LEMON, Items.STRAWBERRY, Items.GRAPES, Items.CARROT, Items.CORN, Items.GARLIC, Items.TOMATO, Items.EGGPLANT, Items.CHILI_PEPPER, Items.MUSHROOM_WHITE, Items.BREAD_LOAF, Items.BAGUETTE, Items.ROAST_CHICKEN,
-	Items.CHICKEN_LEG, Items.STEAK_RAW, Items.HAM_BONE, Items.MEAT_RIB, Items.FISH_FILLET, Items.EGGS_BASKET, Items.EGG_SINGLE, Items.CHEESE_WEDGE, Items.WATER_BOTTLE, Items.HONEY_POT, Items.FLOUR_BAG, Items.SPICE_BAG, Items.CANDY, Items.CAKE_SLICE, Items.COFFEE_MUG,
+	Items.CHICKEN_LEG, Items.STEAK_RAW, Items.HAM_BONE, Items.MEAT_RIB, Items.EGGS_BASKET, Items.EGG_SINGLE, Items.CHEESE_WEDGE, Items.WATER_BOTTLE, Items.HONEY_POT, Items.CANDY, Items.CAKE_SLICE, Items.COFFEE_MUG,
 	Items.FISH_BLUE, Items.FISH_BROWN, Items.EEL, Items.FISH_YELLOW, Items.CLOWNFISH, Items.JELLYFISH, Items.OCTOPUS, Items.TURTLE, Items.WINE_BOTTLE,
 ]
 
@@ -198,7 +198,7 @@ func _gui_input(event: InputEvent) -> void:
 					Events.drag_ended.emit()
 					Sounds.put_down()
 		elif mouse_event.button_index == MOUSE_BUTTON_RIGHT and mouse_event.is_pressed():
-			if item and item != Items.EMPTY:
+			if item and item != Items.EMPTY and not Game.recycled:
 				var out_slots = get_tree().get_nodes_in_group("outgoing_slot")
 				var index_of_empty: int = out_slots.find_custom(func(s): return s.item == Items.EMPTY)
 				if index_of_empty == -1:

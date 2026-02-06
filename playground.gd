@@ -1,6 +1,7 @@
 class_name Level
 extends Node
 
+const FLASHBANG_CURVE = preload("uid://c311oy0dclmrl")
 const SLOT = preload("uid://bcn6c78r7cjih")
 const SLOT_COUNT := 36
 
@@ -19,6 +20,7 @@ var recycle_botton_particles_position: Vector2
 @onready var value_rounds: Label = %ValueRounds
 @onready var bang_particles: CPUParticles2D = %BangParticles
 @onready var time_label: Label = %TimeLabel
+@onready var shiny_flash: Control = %ShinyFlash
 
 
 func _ready() -> void:
@@ -28,17 +30,30 @@ func _ready() -> void:
 		var s: SlottedItem = SLOT.instantiate()
 		inventory_grid_container.add_child(s)
 		slots.append(s)
-	Game.level = self
+	shiny_flash.modulate.a = 0.0
+	
 	Events.score_changed.connect(_on_score_changed)
-	round_timer_pg.max_value = Game.ROUND_TIME
-	round_timer.timeout.connect(Game.round_complete)
 	Events.next_round.connect(_on_round_started)
-	recycle_button.pressed.connect(Events.recycle.emit)
 	Events.game_complete.connect(_on_game_complete)
-	get_tree().paused = true
 	Events.recycled_successfully.connect(_on_successfully_recycled)
 	Events.items_combined.connect(_on_items_combined)
+	
+	round_timer_pg.max_value = Game.ROUND_TIME
+	round_timer.timeout.connect(Game.round_complete)
+	
+	recycle_button.pressed.connect(Events.recycle.emit)
 	recycle_botton_particles_position = bang_particles.global_position
+	
+	Game.level = self
+	get_tree().paused = true
+
+
+
+func _modulate_flash(x:float) -> void:
+	assert(x >= 0.0 and x <= 1.0)
+	var mapped = remap(x, 0.0, 1.0, 0.0, 420.0)
+	shiny_flash.rotation_degrees = mapped
+	shiny_flash.modulate.a = FLASHBANG_CURVE.sample(x)
 
 
 func _on_successfully_recycled() -> void:
@@ -47,6 +62,8 @@ func _on_successfully_recycled() -> void:
 	round_timer.start(Game.ROUND_TIME)
 	time_label.text = "Merge duplicates!"
 	Sounds.recycle()
+	create_tween().tween_method(_modulate_flash, 0.0, 1.0, 0.6)
+	#shiny_flash.
 
 
 func _on_items_combined(_item: SlottedItem.Items, _slot: SlottedItem) -> void:

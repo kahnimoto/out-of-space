@@ -15,6 +15,10 @@ run/main_scene="uid://c5f8xn0aybma4"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://assets/icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://dv40dif24qgq5"
+
 [autoload]
 
 Events="*uid://dxdjvg50xbm6n"
