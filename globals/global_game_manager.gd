@@ -3,6 +3,16 @@ extends Node
 const MAX_ROUNDS := 5
 const ROUND_TIME := 10.0
 
+
+var rounds: Array[Round] = [
+	Round.new(1, "Round 1", SlottedItem.ItemCategories.ARMOUR, SlottedItem.ItemCategories.WEAPON, "Find the weapons!"),
+	Round.new(2, "Round 2", SlottedItem.ItemCategories.WEAPON, SlottedItem.ItemCategories.ARMOUR, "Are these all weapons?"),
+	Round.new(3, "Round 3", SlottedItem.ItemCategories.FOOD, SlottedItem.ItemCategories.ARMOUR, "Is this just foood?"),
+	Round.new(4, "Round 5", SlottedItem.ItemCategories.LOOT, SlottedItem.ItemCategories.FOOD, "Is there food in my loot bag?!"),
+	Round.new(5, "Round 4", SlottedItem.ItemCategories.LOOT, SlottedItem.ItemCategories.WEAPON, "My loot bag is full!"),
+]
+var active_round_index := 0
+var active_round: Round = rounds[active_round_index]
 var score := 0:
 	set(v):
 		if score != v:
@@ -12,21 +22,19 @@ var is_dragging := false
 var dragging: SlottedItem.Items
 var dragging_from: Object
 var level: Level
-var fill_category: SlottedItem.ItemCategories = SlottedItem.ItemCategories.LOOT
-var trick_category: SlottedItem.ItemCategories = SlottedItem.ItemCategories.WEAPON
 var recycled := false
 var correct := 0
 var wrong := 0
 var scored := false
-var rounds := 1
 var game_completed := false
 var game_started := false
 
 
 func reset_game() -> void:
+	active_round_index = 0
+	active_round = rounds[0]
 	game_started = false
 	game_completed = false
-	rounds = 1
 	wrong = 0
 	correct = 0
 	score = 0
@@ -92,7 +100,7 @@ func _recycle() -> void:
 	wrong = 0
 	for os in get_tree().get_nodes_in_group("outgoing_slot"):
 		if os.item != SlottedItem.Items.EMPTY:
-			match trick_category:
+			match active_round.trick:
 				SlottedItem.ItemCategories.WEAPON:
 					if os.item in SlottedItem.WEAPONS:
 						correct += 1
@@ -131,10 +139,8 @@ func new_round() -> void:
 	game_started = true
 	recycled = false
 	scored = false
-	fill_category = pick_random_category()
-	trick_category = pick_random_category(fill_category)
 	Sounds.refresh_inventory()
-	Events.next_round.emit(ROUND_TIME, fill_category, trick_category)
+	Events.next_round.emit(active_round)
 
 
 func round_complete() -> void:
@@ -148,9 +154,26 @@ func round_complete() -> void:
 		for os in get_tree().get_nodes_in_group("outgoing_slot"):
 			os.item = SlottedItem.Items.EMPTY
 	Events.round_complete.emit(correct, wrong)
-	if rounds < MAX_ROUNDS:
-		rounds += 1
+	if active_round_index < MAX_ROUNDS - 1:
+		active_round_index += 1
+		active_round = rounds[active_round_index]
 		new_round()
 	else:
 		game_completed = true
 		Events.game_complete.emit()
+
+
+
+class Round:
+	var nr: int
+	var title: String
+	var fill: SlottedItem.ItemCategories
+	var trick: SlottedItem.ItemCategories
+	var hint: String
+
+	func _init(_nr: int, _title: String, _fill: SlottedItem.ItemCategories, _trick: SlottedItem.ItemCategories, _hint: String) -> void:
+		nr = _nr
+		title = _title
+		fill = _fill
+		trick = _trick
+		hint = _hint

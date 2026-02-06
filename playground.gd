@@ -89,9 +89,9 @@ func _input(event: InputEvent) -> void:
 			Game.new_round()
 
 
-func _on_round_started(_time: float, fill_category: SlottedItem.ItemCategories, trick_category: SlottedItem.ItemCategories) -> void:
-	value_rounds.text = str(Game.rounds)
-	fill_inventory(fill_category, trick_category)
+func _on_round_started(active_round: Game.Round) -> void:
+	value_rounds.text = "Round: %d - %s" % [active_round.nr, active_round.hint]
+	fill_inventory(active_round.fill, active_round.trick)
 	time_label.text = "Remove out of place!"
 
 

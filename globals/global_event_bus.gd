@@ -8,7 +8,7 @@ signal score_changed(new_value: int)
 signal drag_started(item: SlottedItem.Items, source: Object)
 signal drag_ended
 signal drag_aborted
-signal next_round(round_time: float, fill_category: SlottedItem.ItemCategories, trick_category: SlottedItem.ItemCategories)
+signal next_round(round: Game.Round)
 signal round_complete(correct: int, wrong: int)
 signal items_combined(item: SlottedItem.Items, slot: SlottedItem)
 signal recycle
