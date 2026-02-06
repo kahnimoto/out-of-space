@@ -73,6 +73,8 @@ func _on_items_combined(_item: SlottedItem.Items, _slot: SlottedItem) -> void:
 
 
 func _on_recycle() -> void:
+	if not Game.game_started:
+		return
 	_recycle() 
 	if correct == 4 and wrong == 0:
 		Events.recycled_successfully.emit()

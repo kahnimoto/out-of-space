@@ -42,15 +42,15 @@ func _on_mouse_exited() -> void:
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		return
-	if event is InputEventMouseButton and (event as InputEventMouseButton).button_index == MOUSE_BUTTON_LEFT:
+	if event is InputEventMouseButton:
 		var mouse_event := event as InputEventMouseButton
-		if mouse_event.button_index == MOUSE_BUTTON_LEFT:
-			if mouse_event.is_pressed() and item and item != SlottedItem.Items.EMPTY and not Game.is_dragging:
+		if mouse_event.button_index == MOUSE_BUTTON_LEFT and mouse_event.is_pressed():
+			if item and item != SlottedItem.Items.EMPTY and not Game.is_dragging:
 				Events.drag_started.emit(item, self)
 				item = SlottedItem.Items.EMPTY
 				
 				Sounds.grab()
-			elif mouse_event.is_pressed() and Game.is_dragging:
+			elif Game.is_dragging:
 				if item:
 					var old_item = item
 					item = Game.dragging
@@ -61,3 +61,13 @@ func _gui_input(event: InputEvent) -> void:
 					Sounds.put_down()
 					item = Game.dragging
 					Events.drag_ended.emit()
+		elif mouse_event.button_index == MOUSE_BUTTON_RIGHT and mouse_event.is_pressed():
+			if item and item !=  SlottedItem.Items.EMPTY:
+				var out_slots = get_tree().get_nodes_in_group("inventory_slot")
+				var index_of_empty: int = out_slots.find_custom(func(s): return s.item == SlottedItem.Items.EMPTY)
+				if index_of_empty == -1:
+					return
+				var free_outgoing_slot: SlottedItem = out_slots[index_of_empty]
+				free_outgoing_slot.item = item
+				item = SlottedItem.Items.EMPTY
+				Sounds.grab()

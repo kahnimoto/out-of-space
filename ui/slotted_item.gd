@@ -175,12 +175,12 @@ func _gui_input(event: InputEvent) -> void:
 		return
 	if event is InputEventMouseButton:
 		var mouse_event := event as InputEventMouseButton
-		if mouse_event.button_index == MOUSE_BUTTON_LEFT:
-			if mouse_event.is_pressed() and item and item != Items.EMPTY and not Game.is_dragging:
+		if mouse_event.button_index == MOUSE_BUTTON_LEFT and mouse_event.is_pressed():
+			if item and item != Items.EMPTY and not Game.is_dragging:
 				Sounds.grab()
 				Events.drag_started.emit(item, self)
 				item = Items.EMPTY
-			elif mouse_event.is_pressed() and Game.is_dragging:
+			elif Game.is_dragging:
 				if item and item == Game.dragging and Game.recycled:
 					Events.items_combined.emit(item, self)
 					item = SlottedItem.Items.EMPTY
@@ -197,8 +197,8 @@ func _gui_input(event: InputEvent) -> void:
 					item = Game.dragging
 					Events.drag_ended.emit()
 					Sounds.put_down()
-		elif mouse_event.button_index == MOUSE_BUTTON_RIGHT:
-			if mouse_event.is_pressed() and item and item != Items.EMPTY:
+		elif mouse_event.button_index == MOUSE_BUTTON_RIGHT and mouse_event.is_pressed():
+			if item and item != Items.EMPTY:
 				var out_slots = get_tree().get_nodes_in_group("outgoing_slot")
 				var index_of_empty: int = out_slots.find_custom(func(s): return s.item == Items.EMPTY)
 				if index_of_empty == -1:
