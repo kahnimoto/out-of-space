@@ -60,12 +60,13 @@ const ARMOURS: Array[Items] = [
 const FOODS: Array[Items] = [
 	Items.APPLE, Items.BANANA, Items.PEAR, Items.LEMON, Items.STRAWBERRY, Items.GRAPES, Items.CARROT, Items.CORN, Items.GARLIC, Items.TOMATO, Items.EGGPLANT, Items.CHILI_PEPPER, Items.MUSHROOM_WHITE, Items.BREAD_LOAF, Items.BAGUETTE, Items.ROAST_CHICKEN,
 	Items.CHICKEN_LEG, Items.STEAK_RAW, Items.HAM_BONE, Items.MEAT_RIB, Items.FISH_FILLET, Items.EGGS_BASKET, Items.EGG_SINGLE, Items.CHEESE_WEDGE, Items.WATER_BOTTLE, Items.HONEY_POT, Items.FLOUR_BAG, Items.SPICE_BAG, Items.CANDY, Items.CAKE_SLICE, Items.COFFEE_MUG,
-	Items.POTION_RED_S, Items.POTION_BLUE_S, Items.POTION_GREEN_S, Items.POTION_YELLOW_S, Items.FISH_BLUE, Items.FISH_BROWN, Items.EEL, Items.FISH_YELLOW, Items.CLOWNFISH, Items.JELLYFISH, Items.OCTOPUS, Items.TURTLE,
+	Items.FISH_BLUE, Items.FISH_BROWN, Items.EEL, Items.FISH_YELLOW, Items.CLOWNFISH, Items.JELLYFISH, Items.OCTOPUS, Items.TURTLE, Items.WINE_BOTTLE,
 ]
 
 const LOOTS: Array[Items] = [
-	Items.GOLD_COIN, Items.COPPER_STACK, Items.SILVER_STACK, Items.GOLD_STACK, Items.GOLD_SACK, Items.CRYSTAL_SHARDS, Items.RUBY_GEM,
-	Items.BOOK_BLUE, Items.BOOK_RED, Items.BOOK_GREEN, Items.BOOK_YELLOW, Items.BOOK_BLACK, Items.BOOK_BROWN, Items.BOOK_OPEN_BLUE, Items.BOOK_OPEN_RED, Items.BOOK_READING, Items.ENVELOPE, Items.SCROLL_TIED, Items.PAPER_DOCUMENT, Items.TREASURE_MAP, Items.DICE, Items.PLAYING_CARD_ACE, Items.WINE_BOTTLE,
+	Items.GOLD_COIN, Items.COPPER_STACK, Items.SILVER_STACK, Items.GOLD_STACK, Items.GOLD_SACK, Items.CRYSTAL_SHARDS, Items.RUBY_GEM, Items.POUCH, 
+	Items.BOOK_BLUE, Items.BOOK_RED, Items.BOOK_GREEN, Items.BOOK_YELLOW, Items.BOOK_BLACK, Items.BOOK_BROWN, Items.BOOK_OPEN_BLUE, Items.BOOK_OPEN_RED, Items.BOOK_READING, Items.ENVELOPE, Items.SCROLL_TIED, Items.PAPER_DOCUMENT, Items.TREASURE_MAP, Items.DICE, Items.PLAYING_CARD_ACE, 
+	Items.POTION_RED_S, Items.POTION_BLUE_S, Items.POTION_GREEN_S, Items.POTION_YELLOW_S, Items.DIAMOND, Items.GOLD_BAR, Items.MONSTER_TOOTH, Items.LEATHER_HIDE, 
 ]
 
 const REGION_LOCATION: Dictionary[Items, Vector2i] = {
@@ -130,6 +131,7 @@ func set_background(category: ItemCategories) -> void:
 	if category in CategoryToColor:
 		slot_background.self_modulate = CategoryToColor[category]
 
+
 func _update_item() -> void:
 	if slot_item_texture.texture is AtlasTexture:
 		slot_item_texture.texture.region = item_to_texture_rect(item)
@@ -180,10 +182,10 @@ func _gui_input(event: InputEvent) -> void:
 				item = Items.EMPTY
 			elif mouse_event.is_pressed() and Game.is_dragging:
 				if item and item == Game.dragging and Game.recycled:
-					Events.items_combined.emit(item)
+					Events.items_combined.emit(item, self)
 					item = SlottedItem.Items.EMPTY
-					Game.dragging = SlottedItem.Items.EMPTY
 					Events.drag_ended.emit()
+					Events.drag_started.emit(Game.dragging, self)
 					Sounds.merge()
 				elif item:
 					var old_item = item

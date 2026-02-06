@@ -1,7 +1,7 @@
 extends Node
 
 const MAX_ROUNDS := 5
-const ROUND_TIME := 15.0
+const ROUND_TIME := 10.0
 
 var score := 0:
 	set(v):
@@ -68,14 +68,14 @@ func _on_drag_aborted() -> void:
 	dragging_from.item = dragging
 
 
-func _on_items_combined(_item: SlottedItem.Items) -> void:
+func _on_items_combined(_item: SlottedItem.Items, _slot: SlottedItem) -> void:
 	score += 4
 
 
 func _on_recycle() -> void:
 	_recycle() 
 	if correct == 4 and wrong == 0:
-		Sounds.recycle()
+		Events.recycled_successfully.emit()
 		recycled = true
 		scored = true
 		score += 4

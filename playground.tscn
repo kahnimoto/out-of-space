@@ -46,6 +46,19 @@ default_font_size = 12
 Label/constants/line_spacing = 0
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_4bqqs")
 
+[sub_resource type="Curve" id="Curve_4bqqs"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 0.004860282), 0.0, 6.0445533, 0, 0, Vector2(1, -1), -4.649656, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_ynsuh"]
+_data = [Vector2(0, 0), 0.0, 5.4135284, 0, 0, Vector2(1, 0), 0.28921357, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_v7dth"]
+offsets = PackedFloat32Array(0, 0.25827813, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1)
+
 [node name="Playground" type="Node" unique_id=847819684]
 process_mode = 3
 script = ExtResource("1_4bqqs")
@@ -359,7 +372,8 @@ theme_override_styles/background = SubResource("StyleBoxFlat_te8jg")
 theme_override_styles/fill = SubResource("StyleBoxFlat_yjl7g")
 show_percentage = false
 
-[node name="Label" type="Label" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ValueRoundTimer" unique_id=190060390]
+[node name="TimeLabel" type="Label" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ValueRoundTimer" unique_id=190060390]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -459,9 +473,37 @@ layout_mode = 2
 size_flags_horizontal = 0
 text = "Sun"
 
+[node name="Node" type="CanvasLayer" parent="." unique_id=1005955761]
+layer = 3
+
+[node name="BangParticles" type="CPUParticles2D" parent="Node" unique_id=240489572]
+unique_name_in_owner = true
+z_index = 3
+position = Vector2(807, 368)
+emitting = false
+amount = 32
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.9
+emission_shape = 1
+emission_sphere_radius = 15.65
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 152.05
+initial_velocity_max = 210.53
+linear_accel_curve = SubResource("Curve_4bqqs")
+scale_amount_min = 10.0
+scale_amount_max = 10.0
+scale_amount_curve = SubResource("Curve_ynsuh")
+color = Color(1, 0.8441667, 0.45, 1)
+color_ramp = SubResource("Gradient_v7dth")
+hue_variation_min = -0.4
+hue_variation_max = 0.4
+
 [node name="Message" type="CanvasLayer" parent="." unique_id=626984872]
 unique_name_in_owner = true
 layer = 998
+visible = false
 
 [node name="Control" type="Control" parent="Message" unique_id=1623629686]
 layout_mode = 3
