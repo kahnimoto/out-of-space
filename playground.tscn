@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dwd50p15er7an" path="res://assets/items_transparent_dropshadow.png" id="5_4bqqs"]
 [ext_resource type="Texture2D" uid="uid://c2t5s25qbvegl" path="res://assets/tileset.png" id="7_v7dth"]
 [ext_resource type="Script" uid="uid://ca61pwl6g0vse" path="res://ui/tool_tips.gd" id="7_ynsuh"]
+[ext_resource type="Script" uid="uid://bck24m7hbxxya" path="res://settings_menu.gd" id="8_v7dth"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_te8jg"]
 bg_color = Color(1, 1, 1, 0.15686275)
@@ -63,6 +64,13 @@ colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1)
 [sub_resource type="AtlasTexture" id="AtlasTexture_pio1y"]
 atlas = ExtResource("7_v7dth")
 region = Rect2(68, 34, 28, 29)
+
+[sub_resource type="Gradient" id="Gradient_ynsuh"]
+offsets = PackedFloat32Array(0.60457516)
+colors = PackedColorArray(0, 0, 0, 0.8627451)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_v7dth"]
+gradient = SubResource("Gradient_ynsuh")
 
 [node name="Playground" type="Node" unique_id=847819684]
 process_mode = 3
@@ -202,19 +210,20 @@ bbcode_enabled = true
 text = "
 [b]Instructions[/b]
 
+1. Recycle the [b]four[/b] items that is
+    [i]out of place[/i]
+2. [b]Afterward that[/b], combine [i]duplicates[/i] 
+    to score points
 
-[b]Left click[/b] on item to pickup. Click again to place item.
+[b]Left click[/b] to pick up item.
 
-[b]Right click[/b] to quick move item to recycle.
+[b]Right click[/b] to quick move item.
 
-Identify the 4 items that doesnt fit and move them out to recycle bin.
 
-Click button or press [b]Space[/b] to attempt
-to recycle.
+Recycle button or [b]Space[/b] to attempt to recycle. Only with them removed, merge duplicates for large bonus points.
 
-With 4 items removed, merge duplicates for large bonus points.
-
-"
+[b]S[/b]: Sound settings
+[b]M[/b]: Mute music"
 
 [node name="InventoryAndAbilities" type="VBoxContainer" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer" unique_id=324731215]
 layout_mode = 2
@@ -508,8 +517,8 @@ hue_variation_max = 0.4
 
 [node name="ShinyFlash" type="TextureRect" parent="Node" unique_id=1885904312]
 unique_name_in_owner = true
+visible = false
 self_modulate = Color(1.8247963, 1.4684368, 0, 1)
-anchors_preset = -1
 offset_left = 725.0
 offset_top = 184.0
 offset_right = 887.0
@@ -565,3 +574,205 @@ unique_name_in_owner = true
 process_mode = 1
 wait_time = 15.0
 one_shot = true
+
+[node name="SettingsMenu" type="CanvasLayer" parent="." unique_id=352596482]
+layer = 99999
+visible = false
+script = ExtResource("8_v7dth")
+
+[node name="TextureRect" type="TextureRect" parent="SettingsMenu" unique_id=142669089]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_v7dth")
+
+[node name="Control" type="Control" parent="SettingsMenu" unique_id=1976950707]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingsMenu/Control" unique_id=1193408528]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsMenu/Control/MarginContainer" unique_id=927310036]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="SettingsMenu/Control/MarginContainer/VBoxContainer" unique_id=536692694]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="SettingsMenu/Control/MarginContainer/VBoxContainer" unique_id=1739010966]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer" unique_id=1795212145]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "Sound Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control2" type="Control" parent="SettingsMenu/Control/MarginContainer/VBoxContainer" unique_id=2014841046]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="SettingsMenu/Control/MarginContainer/VBoxContainer" unique_id=1034255214]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2" unique_id=250242967]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer" unique_id=559687540]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer" unique_id=868231974]
+layout_mode = 2
+alignment = 1
+
+[node name="Control" type="Control" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer" unique_id=1090149278]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer" unique_id=1194758183]
+layout_mode = 2
+text = "Master volume"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Control2" type="Control" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer" unique_id=2034023063]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="ValueMainVolume" type="Label" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer" unique_id=2055667233]
+unique_name_in_owner = true
+layout_mode = 2
+text = "100%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control3" type="Control" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer" unique_id=905976384]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="ProgressBarMainVolume" type="HSlider" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer" unique_id=1237564968]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+step = 10.0
+value = 100.0
+
+[node name="Control4" type="Control" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer" unique_id=81487271]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer" unique_id=612915390]
+layout_mode = 2
+alignment = 1
+
+[node name="Control" type="Control" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer2" unique_id=268819872]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer2" unique_id=2110462088]
+layout_mode = 2
+text = "Music volume"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Control2" type="Control" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer2" unique_id=1015942185]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="ValueMusicVolume" type="Label" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer2" unique_id=1899836932]
+unique_name_in_owner = true
+layout_mode = 2
+text = "80%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control3" type="Control" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer2" unique_id=776859616]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="ProgressBarMusicVolume" type="HSlider" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer2" unique_id=1654440171]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+step = 10.0
+value = 80.0
+
+[node name="Control4" type="Control" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer2" unique_id=1244155812]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer" unique_id=1883349341]
+layout_mode = 2
+alignment = 1
+
+[node name="Control" type="Control" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer3" unique_id=259485770]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer3" unique_id=1727541647]
+layout_mode = 2
+text = "Effects volume"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Control2" type="Control" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer3" unique_id=284324760]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="ValueSFXVolume" type="Label" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer3" unique_id=1055415252]
+unique_name_in_owner = true
+layout_mode = 2
+text = "80%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control3" type="Control" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer3" unique_id=888677004]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="ProgressBarSFXVolume" type="HSlider" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer3" unique_id=261803914]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+step = 10.0
+value = 80.0
+
+[node name="Control4" type="Control" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer3" unique_id=1279456548]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer" unique_id=794401203]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="ApplySoundSettingsButton" type="Button" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer" unique_id=1513472357]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Apply and Save"
+
+[node name="Control3" type="Control" parent="SettingsMenu/Control/MarginContainer/VBoxContainer" unique_id=1667050424]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2

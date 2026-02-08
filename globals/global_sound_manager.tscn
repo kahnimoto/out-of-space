@@ -7,25 +7,39 @@
 [ext_resource type="AudioStream" uid="uid://bqmc80vl6n5nu" path="res://assets/sounds/grab_1.mp3" id="5_no4mr"]
 [ext_resource type="AudioStream" uid="uid://bwefm3rkf0uga" path="res://assets/sounds/grab_2.mp3" id="6_dp53n"]
 [ext_resource type="AudioStream" uid="uid://3kfb2pwveink" path="res://assets/sounds/reward.mp3" id="7_dp53n"]
+[ext_resource type="AudioStream" uid="uid://d2cqj5vynclq5" path="res://assets/sounds/music.mp3" id="8_l8kk7"]
 
 [node name="Node" type="Node" unique_id=375748915]
 script = ExtResource("1_rnyyl")
 
 [node name="AudioRefresh" type="AudioStreamPlayer" parent="." unique_id=341349511]
 stream = ExtResource("2_h6lrm")
+bus = &"SFX"
 
 [node name="AudioRecycle" type="AudioStreamPlayer" parent="." unique_id=1047982756]
 stream = ExtResource("3_ofw6i")
+bus = &"SFX"
 
 [node name="AudioError" type="AudioStreamPlayer" parent="." unique_id=1613514293]
 stream = ExtResource("4_h6lrm")
 volume_db = -24.87
+bus = &"SFX"
 
 [node name="AudioGrab" type="AudioStreamPlayer" parent="." unique_id=489874766]
 stream = ExtResource("5_no4mr")
+bus = &"SFX"
 
 [node name="AudioPutDown" type="AudioStreamPlayer" parent="." unique_id=467210695]
 stream = ExtResource("6_dp53n")
+bus = &"SFX"
 
 [node name="AudioMerge" type="AudioStreamPlayer" parent="." unique_id=1343363297]
 stream = ExtResource("7_dp53n")
+bus = &"SFX"
+
+[node name="AudioMusic" type="AudioStreamPlayer" parent="." unique_id=1412509777]
+stream = ExtResource("8_l8kk7")
+volume_db = -7.913
+autoplay = true
+bus = &"Music"
+parameters/looping = true

@@ -24,6 +24,7 @@ var recycle_botton_particles_position: Vector2
 
 
 func _ready() -> void:
+	shiny_flash.show()
 	for child in inventory_grid_container.get_children():
 		child.queue_free()
 	for _i in SLOT_COUNT:

@@ -1,0 +1,771 @@
+[gd_scene format=3 uid="uid://c5f8xn0aybma4"]
+
+[ext_resource type="Script" uid="uid://bjc8mkxm0oria" path="res://playground.gd" id="1_4bqqs"]
+[ext_resource type="Theme" uid="uid://dfufxhx5hni20" path="res://ui/theme.tres" id="1_rupst"]
+[ext_resource type="PackedScene" uid="uid://bcn6c78r7cjih" path="res://ui/slot.tscn" id="3_4bqqs"]
+[ext_resource type="PackedScene" uid="uid://dvk8kr67yiqnq" path="res://ui/outgoing_slot.tscn" id="4_o00ia"]
+[ext_resource type="Texture2D" uid="uid://dwd50p15er7an" path="res://assets/items_transparent_dropshadow.png" id="5_4bqqs"]
+[ext_resource type="Texture2D" uid="uid://c2t5s25qbvegl" path="res://assets/tileset.png" id="7_v7dth"]
+[ext_resource type="Script" uid="uid://ca61pwl6g0vse" path="res://ui/tool_tips.gd" id="7_ynsuh"]
+[ext_resource type="Script" uid="uid://bck24m7hbxxya" path="res://settings_menu.gd" id="8_v7dth"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_te8jg"]
+bg_color = Color(1, 1, 1, 0.15686275)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yjl7g"]
+bg_color = Color(0.34081984, 0.687168, 0.43022972, 1)
+
+[sub_resource type="InputEventKey" id="InputEventKey_ynsuh"]
+device = -1
+keycode = 32
+unicode = 32
+
+[sub_resource type="Shortcut" id="Shortcut_v7dth"]
+events = [SubResource("InputEventKey_ynsuh")]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pi42a"]
+atlas = ExtResource("5_4bqqs")
+region = Rect2(192, 64, 32, 32)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pi42a"]
+load_path = "res://.godot/imported/items_transparent_dropshadow.png-b8942f16d5dcfac610d1c4379faf7577.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5gkh"]
+atlas = SubResource("CompressedTexture2D_pi42a")
+region = Rect2(224, 256, 32, 32)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4bqqs"]
+content_margin_left = 8.0
+content_margin_right = 8.0
+bg_color = Color(0.011764706, 0.03529412, 0.21176471, 0.70980394)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="Theme" id="Theme_ynsuh"]
+default_font_size = 12
+Label/constants/line_spacing = 0
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_4bqqs")
+
+[sub_resource type="Curve" id="Curve_4bqqs"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 0.004860282), 0.0, 6.0445533, 0, 0, Vector2(1, -1), -4.649656, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_ynsuh"]
+_data = [Vector2(0, 0), 0.0, 5.4135284, 0, 0, Vector2(1, 0), 0.28921357, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_v7dth"]
+offsets = PackedFloat32Array(0, 0.25827813, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pio1y"]
+atlas = ExtResource("7_v7dth")
+region = Rect2(68, 34, 28, 29)
+
+[sub_resource type="Gradient" id="Gradient_ynsuh"]
+offsets = PackedFloat32Array(0.60457516)
+colors = PackedColorArray(0, 0, 0, 0.8627451)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_v7dth"]
+gradient = SubResource("Gradient_ynsuh")
+
+[node name="Playground" type="Node" unique_id=847819684]
+process_mode = 3
+script = ExtResource("1_4bqqs")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=998342668]
+process_mode = 1
+
+[node name="Container" type="Control" parent="UI" unique_id=1019630975]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_rupst")
+
+[node name="ColorRect" type="ColorRect" parent="UI/Container" unique_id=1765270002]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Margin" type="MarginContainer" parent="UI/Container" unique_id=1528675]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Container/Margin" unique_id=1435760113]
+layout_mode = 2
+
+[node name="Header" type="PanelContainer" parent="UI/Container/Margin/VBoxContainer" unique_id=1991351838]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Container/Margin/VBoxContainer/Header" unique_id=1620811469]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="Control" type="Control" parent="UI/Container/Margin/VBoxContainer/Header/HBoxContainer" unique_id=1415516113]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="UI/Container/Margin/VBoxContainer/Header/HBoxContainer" unique_id=728380566]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "OUT OF SPACE"
+
+[node name="Control2" type="Control" parent="UI/Container/Margin/VBoxContainer/Header/HBoxContainer" unique_id=1019333745]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Game" type="Control" parent="UI/Container/Margin/VBoxContainer" unique_id=38208795]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control" type="MarginContainer" parent="UI/Container/Margin/VBoxContainer/Game" unique_id=1846657136]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Container/Margin/VBoxContainer/Game/Control" unique_id=1672373230]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer" unique_id=1218277764]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+
+[node name="PointsContainer" type="HBoxContainer" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer" unique_id=2140627161]
+layout_mode = 2
+alignment = 1
+
+[node name="LabelPoints" type="Label" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/PointsContainer" unique_id=1291749300]
+layout_mode = 2
+text = "Round:"
+
+[node name="ValueRounds" type="Label" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/PointsContainer" unique_id=1015564524]
+unique_name_in_owner = true
+layout_mode = 2
+text = "1"
+
+[node name="Control" type="Control" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/PointsContainer" unique_id=80392571]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="LabelPoints2" type="Label" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/PointsContainer" unique_id=316869432]
+layout_mode = 2
+text = "Points:"
+
+[node name="ValuePoints" type="Label" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/PointsContainer" unique_id=2095518883]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "0"
+horizontal_alignment = 2
+
+[node name="Control2" type="Control" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer" unique_id=1341016851]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+
+[node name="MainContainer" type="HBoxContainer" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer" unique_id=1844495596]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="InstructionsContainer" type="Control" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer" unique_id=824366243]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LabelInstructions" type="RichTextLabel" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InstructionsContainer" unique_id=2103867639]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.50928617, 0.50928617, 0.50928617, 1)
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 14
+bbcode_enabled = true
+text = "
+[b]Instructions[/b]
+
+
+[b]Left click[/b] on item to pickup. Click again to place item.
+
+[b]Right click[/b] to quick move item to recycle.
+
+Identify the 4 items that doesnt fit and move them out to recycle bin.
+
+Click button or press [b]Space[/b] to attempt
+to recycle.
+
+With 4 items removed, merge duplicates for large bonus points.
+
+"
+
+[node name="InventoryAndAbilities" type="VBoxContainer" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer" unique_id=324731215]
+layout_mode = 2
+
+[node name="InventoryGridContainer" type="GridContainer" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities" unique_id=80108850]
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 6
+
+[node name="Slot" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1093646726 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+item = 16
+
+[node name="Slot2" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1280030761 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+item = 32
+
+[node name="Slot3" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=502525251 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot4" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1301555804 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot5" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=27604809 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot6" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=700904016 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot7" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=238476246 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot8" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=989798316 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot9" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1630278919 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot10" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1714386697 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot11" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=76834338 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot12" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=51770444 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot13" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1439392248 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot14" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1431621679 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot15" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=182546103 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot16" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=232095778 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot17" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1444262837 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot18" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1318147898 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot19" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1174751921 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot20" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=98973888 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot21" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=2029568388 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot22" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1456523709 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot23" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1070169993 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot24" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1065945543 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot25" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1374369425 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot26" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=2037612474 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot27" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=501105044 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot28" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1249249723 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot29" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1987931378 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot30" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1955761581 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot31" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1779689158 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot32" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1317912256 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot33" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1071730152 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot34" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=578185103 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot35" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=705574355 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Slot36" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities/InventoryGridContainer" unique_id=1589801384 instance=ExtResource("3_4bqqs")]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/InventoryAndAbilities" unique_id=2128581378]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="ShopContainer" type="Control" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer" unique_id=944096990]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Shop" type="VBoxContainer" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer" unique_id=1069498407]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop" unique_id=1310229655]
+custom_minimum_size = Vector2(0, 62.61)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control" unique_id=620121960]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.0
+offset_right = 128.0
+offset_bottom = 64.0
+grow_horizontal = 2
+
+[node name="Control5" type="Control" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer" unique_id=2128844056]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="ValueRoundTimer" type="ProgressBar" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer" unique_id=1379544866]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(256, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_te8jg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_yjl7g")
+show_percentage = false
+
+[node name="TimeLabel" type="Label" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ValueRoundTimer" unique_id=190060390]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -14.0
+offset_right = 128.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"HeaderSmall"
+text = "Time left"
+horizontal_alignment = 1
+
+[node name="Control3" type="Control" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer" unique_id=684557495]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="ShopInventory" type="GridContainer" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer" unique_id=1395296954]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 2
+
+[node name="Slot" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory" unique_id=2098503924 instance=ExtResource("4_o00ia")]
+layout_mode = 2
+
+[node name="Slot2" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory" unique_id=1557135841 instance=ExtResource("4_o00ia")]
+layout_mode = 2
+
+[node name="Slot3" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory" unique_id=637708100 instance=ExtResource("4_o00ia")]
+layout_mode = 2
+
+[node name="Slot4" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/ShopInventory" unique_id=784760619 instance=ExtResource("4_o00ia")]
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer" unique_id=251548345]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="RecycleButton" type="Button" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer" unique_id=1052125860]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+shortcut = SubResource("Shortcut_v7dth")
+icon = SubResource("AtlasTexture_pi42a")
+
+[node name="ToolTips" type="CanvasLayer" parent="." unique_id=1581755084]
+unique_name_in_owner = true
+process_mode = 1
+script = ExtResource("7_ynsuh")
+
+[node name="DragContainer" type="Control" parent="ToolTips" unique_id=1000011651]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 48.0
+offset_bottom = 48.0
+mouse_filter = 2
+
+[node name="ItemTexture" type="TextureRect" parent="ToolTips/DragContainer" unique_id=1041827577]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_a5gkh")
+expand_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="TooltipContainer" type="Control" parent="ToolTips" unique_id=1185836144]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+theme = SubResource("Theme_ynsuh")
+
+[node name="PanelContainer" type="PanelContainer" parent="ToolTips/TooltipContainer" unique_id=1907243045]
+layout_mode = 1
+offset_left = 11.0
+offset_top = 5.0
+offset_right = 49.0
+offset_bottom = 22.0
+mouse_filter = 2
+
+[node name="TooltipTitle" type="Label" parent="ToolTips/TooltipContainer/PanelContainer" unique_id=1086550673]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Sun"
+
+[node name="Node" type="CanvasLayer" parent="." unique_id=1005955761]
+layer = 3
+
+[node name="BangParticles" type="CPUParticles2D" parent="Node" unique_id=240489572]
+unique_name_in_owner = true
+z_index = 3
+position = Vector2(807, 368)
+emitting = false
+amount = 32
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.9
+emission_shape = 1
+emission_sphere_radius = 15.65
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 152.05
+initial_velocity_max = 210.53
+linear_accel_curve = SubResource("Curve_4bqqs")
+scale_amount_min = 10.0
+scale_amount_max = 10.0
+scale_amount_curve = SubResource("Curve_ynsuh")
+color = Color(1, 0.8441667, 0.45, 1)
+color_ramp = SubResource("Gradient_v7dth")
+hue_variation_min = -0.4
+hue_variation_max = 0.4
+
+[node name="ShinyFlash" type="TextureRect" parent="Node" unique_id=1885904312]
+unique_name_in_owner = true
+visible = false
+self_modulate = Color(1.8247963, 1.4684368, 0, 1)
+offset_left = 725.0
+offset_top = 184.0
+offset_right = 887.0
+offset_bottom = 344.0
+pivot_offset = Vector2(80, 80)
+mouse_filter = 2
+texture = SubResource("AtlasTexture_pio1y")
+
+[node name="Message" type="CanvasLayer" parent="." unique_id=626984872]
+unique_name_in_owner = true
+layer = 998
+visible = false
+
+[node name="Control" type="Control" parent="Message" unique_id=1623629686]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Message/Control" unique_id=1300923095]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -205.0
+offset_top = -20.0
+offset_right = 205.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Message/Control/PanelContainer" unique_id=587101895]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 8
+
+[node name="ValueMessage" type="Label" parent="Message/Control/PanelContainer/MarginContainer" unique_id=1511771406]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "Press click to start"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RoundTimer" type="Timer" parent="." unique_id=380676390]
+unique_name_in_owner = true
+process_mode = 1
+wait_time = 15.0
+one_shot = true
+
+[node name="SettingsMenu" type="CanvasLayer" parent="." unique_id=352596482]
+script = ExtResource("8_v7dth")
+
+[node name="TextureRect" type="TextureRect" parent="SettingsMenu" unique_id=142669089]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_v7dth")
+
+[node name="Control" type="Control" parent="SettingsMenu" unique_id=1976950707]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingsMenu/Control" unique_id=1193408528]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsMenu/Control/MarginContainer" unique_id=927310036]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="SettingsMenu/Control/MarginContainer/VBoxContainer" unique_id=536692694]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="SettingsMenu/Control/MarginContainer/VBoxContainer" unique_id=1739010966]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer" unique_id=1795212145]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "Sound Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control2" type="Control" parent="SettingsMenu/Control/MarginContainer/VBoxContainer" unique_id=2014841046]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="SettingsMenu/Control/MarginContainer/VBoxContainer" unique_id=1034255214]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2" unique_id=250242967]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer" unique_id=559687540]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer" unique_id=868231974]
+layout_mode = 2
+alignment = 1
+
+[node name="Control" type="Control" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer" unique_id=1090149278]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer" unique_id=1194758183]
+layout_mode = 2
+text = "Master volume"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Control2" type="Control" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer" unique_id=2034023063]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="ValueMainVolume" type="Label" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer" unique_id=2055667233]
+unique_name_in_owner = true
+layout_mode = 2
+text = "80%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control3" type="Control" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer" unique_id=905976384]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="ProgressBarMainVolume" type="HSlider" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer" unique_id=1237564968]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+value = 80.0
+
+[node name="Control4" type="Control" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer" unique_id=81487271]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer" unique_id=612915390]
+layout_mode = 2
+alignment = 1
+
+[node name="Control" type="Control" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer2" unique_id=268819872]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer2" unique_id=2110462088]
+layout_mode = 2
+text = "Music volume"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Control2" type="Control" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer2" unique_id=1015942185]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="ValueMusicVolume" type="Label" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer2" unique_id=1899836932]
+unique_name_in_owner = true
+layout_mode = 2
+text = "80%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control3" type="Control" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer2" unique_id=776859616]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="ProgressBarMusicVolume" type="HSlider" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer2" unique_id=1654440171]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+value = 80.0
+
+[node name="Control4" type="Control" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer2" unique_id=1244155812]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer" unique_id=1883349341]
+layout_mode = 2
+alignment = 1
+
+[node name="Control" type="Control" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer3" unique_id=259485770]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer3" unique_id=1727541647]
+layout_mode = 2
+text = "Effects volume"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Control2" type="Control" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer3" unique_id=284324760]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="ValueSFXVolume" type="Label" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer3" unique_id=1055415252]
+unique_name_in_owner = true
+layout_mode = 2
+text = "80%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control3" type="Control" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer3" unique_id=888677004]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="ProgressBarSFXVolume" type="HSlider" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer3" unique_id=261803914]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+value = 80.0
+
+[node name="Control4" type="Control" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer3" unique_id=1279456548]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer" unique_id=794401203]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer" unique_id=1513472357]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Apply and Save"
+
+[node name="Control3" type="Control" parent="SettingsMenu/Control/MarginContainer/VBoxContainer" unique_id=1667050424]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
