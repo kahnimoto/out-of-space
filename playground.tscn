@@ -213,14 +213,15 @@ text = "
 1. Recycle the [b]four[/b] items that is
     [i]out of place[/i]
 2. [b]Afterward that[/b], combine [i]duplicates[/i] 
-    to score points
+5. Score as much as possible in [b]five[/b] rounds
 
 [b]Left click[/b] to pick up item.
-
 [b]Right click[/b] to quick move item.
 
-
 Recycle button or [b]Space[/b] to attempt to recycle. Only with them removed, merge duplicates for large bonus points.
+
+There are 4 categories;
+Weapons, Armour, Loot and Food
 
 [b]S[/b]: Sound settings
 [b]M[/b]: Mute music"
