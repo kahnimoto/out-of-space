@@ -21,6 +21,8 @@ var recycle_botton_particles_position: Vector2
 @onready var bang_particles: CPUParticles2D = %BangParticles
 @onready var time_label: Label = %TimeLabel
 @onready var shiny_flash: Control = %ShinyFlash
+@onready var settings_menu: CanvasLayer = $SettingsMenu
+@onready var settings_button: Button = $UI/Container/SettingsButton
 
 
 func _ready() -> void:
@@ -47,7 +49,7 @@ func _ready() -> void:
 	
 	Game.level = self
 	get_tree().paused = true
-
+	settings_button.pressed.connect(settings_menu.show)
 
 
 func _modulate_flash(x:float) -> void:

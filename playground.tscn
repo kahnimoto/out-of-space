@@ -440,6 +440,18 @@ size_flags_vertical = 4
 shortcut = SubResource("Shortcut_v7dth")
 icon = SubResource("AtlasTexture_pi42a")
 
+[node name="SettingsButton" type="Button" parent="UI/Container" unique_id=1405832838]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -94.0
+offset_top = 19.0
+offset_right = -24.0
+offset_bottom = 50.0
+grow_horizontal = 0
+text = "Settings"
+
 [node name="ToolTips" type="CanvasLayer" parent="." unique_id=1581755084]
 unique_name_in_owner = true
 process_mode = 1

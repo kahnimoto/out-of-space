@@ -18,12 +18,13 @@ func _ready() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel") and visible:
+		hide()
 	if event.is_action_pressed("settings"):
 		if visible:
 			_on_apply()
 		else:
 			show()
-	
 
 
 func _on_apply() -> void:
