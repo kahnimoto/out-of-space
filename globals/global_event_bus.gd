@@ -14,3 +14,4 @@ signal items_combined(item: SlottedItem.Items, slot: SlottedItem)
 signal recycle
 signal game_complete()
 signal recycled_successfully
+signal output_slot_changed(slot: OutgoingSlot)

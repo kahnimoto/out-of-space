@@ -7,6 +7,8 @@ extends Node
 @onready var audio_put_down: AudioStreamPlayer = $AudioPutDown
 @onready var audio_merge: AudioStreamPlayer = $AudioMerge
 @onready var audio_music: AudioStreamPlayer = $AudioMusic
+@onready var audio_enable: AudioStreamPlayer = $AudioEnable
+@onready var audio_disable: AudioStreamPlayer = $AudioDisable
 
 
 func _ready() -> void:
@@ -26,6 +28,14 @@ func refresh_inventory() -> void:
 
 func error() -> void:
 	audio_error.play()
+
+
+func enable() -> void:
+	audio_enable.play()
+
+
+func disable() -> void:
+	audio_disable.play()
 
 
 func grab() -> void:

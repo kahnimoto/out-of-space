@@ -73,7 +73,8 @@ func _on_drag_ended() -> void:
 
 func _on_drag_aborted() -> void:
 	is_dragging = false
-	dragging_from.item = dragging
+	if dragging:
+		dragging_from.item = dragging
 
 
 func _on_items_combined(_item: SlottedItem.Items, _slot: SlottedItem) -> void:
@@ -121,7 +122,7 @@ func _recycle() -> void:
 						correct += 1
 					else:
 						wrong += 1
-	
+
 
 func pick_random_category(avoiding: SlottedItem.ItemCategories = SlottedItem.ItemCategories.NONE) -> SlottedItem.ItemCategories:
 	var a = [

@@ -6,6 +6,7 @@ extends Control
 	set(v):
 		if item != v:
 			item = v
+			Events.output_slot_changed.emit(self)
 			if is_node_ready():
 				_update_item()
 

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://do60o0hyttuva"]
+
+[ext_resource type="Script" uid="uid://eyas7v4tluod" path="res://ui/nodes/stretchy_button.gd" id="1_c0kcy"]
+
+[node name="StretchyButton" type="Node" unique_id=1404790318]
+script = ExtResource("1_c0kcy")

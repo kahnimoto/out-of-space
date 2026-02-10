@@ -160,6 +160,19 @@ static func pick_random_item() -> Items:
 	return random_item
 
 
+static func item_in_category(_item: Items, category: ItemCategories) -> bool:
+	match category:
+		ItemCategories.WEAPON:
+			return _item in WEAPONS
+		ItemCategories.ARMOUR:
+			return _item in ARMOURS
+		ItemCategories.LOOT:
+			return _item in LOOTS
+		ItemCategories.FOOD:
+			return _item in FOODS
+	return false
+
+
 func _on_mouse_entered() -> void:
 	if not item or item == Items.EMPTY or Game.is_dragging:
 		return

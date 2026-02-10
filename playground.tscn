@@ -5,15 +5,17 @@
 [ext_resource type="PackedScene" uid="uid://bcn6c78r7cjih" path="res://ui/slot.tscn" id="3_4bqqs"]
 [ext_resource type="PackedScene" uid="uid://dvk8kr67yiqnq" path="res://ui/outgoing_slot.tscn" id="4_o00ia"]
 [ext_resource type="Texture2D" uid="uid://dwd50p15er7an" path="res://assets/items_transparent_dropshadow.png" id="5_4bqqs"]
-[ext_resource type="Texture2D" uid="uid://c2t5s25qbvegl" path="res://assets/tileset.png" id="7_v7dth"]
 [ext_resource type="Script" uid="uid://ca61pwl6g0vse" path="res://ui/tool_tips.gd" id="7_ynsuh"]
-[ext_resource type="Script" uid="uid://bck24m7hbxxya" path="res://settings_menu.gd" id="8_v7dth"]
+[ext_resource type="Script" uid="uid://bck24m7hbxxya" path="res://ui/settings_menu.gd" id="8_v7dth"]
+[ext_resource type="PackedScene" uid="uid://do60o0hyttuva" path="res://ui/nodes/stretchy_button.tscn" id="10_h1jm5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_te8jg"]
 bg_color = Color(1, 1, 1, 0.15686275)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yjl7g"]
 bg_color = Color(0.34081984, 0.687168, 0.43022972, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v7dth"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_ynsuh"]
 device = -1
@@ -25,7 +27,9 @@ events = [SubResource("InputEventKey_ynsuh")]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pi42a"]
 atlas = ExtResource("5_4bqqs")
-region = Rect2(192, 64, 32, 32)
+region = Rect2(384, 384, 32, 32)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h1jm5"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pi42a"]
 load_path = "res://.godot/imported/items_transparent_dropshadow.png-b8942f16d5dcfac610d1c4379faf7577.ctex"
@@ -60,10 +64,6 @@ point_count = 2
 [sub_resource type="Gradient" id="Gradient_v7dth"]
 offsets = PackedFloat32Array(0, 0.25827813, 1)
 colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pio1y"]
-atlas = ExtResource("7_v7dth")
-region = Rect2(68, 34, 28, 29)
 
 [sub_resource type="Gradient" id="Gradient_ynsuh"]
 offsets = PackedFloat32Array(0.60457516)
@@ -210,7 +210,7 @@ bbcode_enabled = true
 text = "
 [b]Instructions[/b]
 
-1. Recycle the [b]four[/b] items that is
+1. Sell  the [b]four[/b] items that is
     [i]out of place[/i]
 2. [b]Afterward that[/b], combine [i]duplicates[/i] 
 5. Score as much as possible in [b]five[/b] rounds
@@ -218,7 +218,7 @@ text = "
 [b]Left click[/b] to pick up item.
 [b]Right click[/b] to quick move item.
 
-Recycle button or [b]Space[/b] to attempt to recycle. Only with them removed, merge duplicates for large bonus points.
+Sell button or [b]Space[/b] to sell. Only with them removed, merge duplicates for large bonus points.
 
 There are 4 categories;
 Weapons, Armour, Loot and Food
@@ -434,11 +434,23 @@ layout_mode = 2
 
 [node name="RecycleButton" type="Button" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer" unique_id=1052125860]
 unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(90, 45)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_colors/font_color = Color(1, 0.7607843, 0.22745098, 1)
+theme_override_colors/font_focus_color = Color(1, 0.7607843, 0.22745098, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.87333333, 0.6, 1)
+theme_override_colors/font_hover_color = Color(1, 0.7607843, 0.22745098, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.7607843, 0.22745098, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_v7dth")
 shortcut = SubResource("Shortcut_v7dth")
+shortcut_in_tooltip = false
+text = "Sell"
 icon = SubResource("AtlasTexture_pi42a")
+
+[node name="StretchyButton" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/MainContainer/ShopContainer/Shop/Control/VBoxContainer/RecycleButton" unique_id=1404790318 instance=ExtResource("10_h1jm5")]
 
 [node name="SettingsButton" type="Button" parent="UI/Container" unique_id=1405832838]
 layout_mode = 1
@@ -450,7 +462,12 @@ offset_top = 19.0
 offset_right = -24.0
 offset_bottom = 50.0
 grow_horizontal = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_h1jm5")
 text = "Settings"
+
+[node name="StretchyButton" parent="UI/Container/SettingsButton" unique_id=1886762971 instance=ExtResource("10_h1jm5")]
+rotation_limits = 15.0
+disabled_scale = 10.0
 
 [node name="ToolTips" type="CanvasLayer" parent="." unique_id=1581755084]
 unique_name_in_owner = true
@@ -507,12 +524,12 @@ layer = 3
 [node name="BangParticles" type="CPUParticles2D" parent="Node" unique_id=240489572]
 unique_name_in_owner = true
 z_index = 3
-position = Vector2(807, 368)
+position = Vector2(773, 227)
 emitting = false
 amount = 32
-lifetime = 0.5
+lifetime = 0.45
 one_shot = true
-explosiveness = 0.9
+explosiveness = 0.8
 emission_shape = 1
 emission_sphere_radius = 15.65
 spread = 180.0
@@ -528,17 +545,97 @@ color_ramp = SubResource("Gradient_v7dth")
 hue_variation_min = -0.4
 hue_variation_max = 0.4
 
-[node name="ShinyFlash" type="TextureRect" parent="Node" unique_id=1885904312]
-unique_name_in_owner = true
-visible = false
-self_modulate = Color(1.8247963, 1.4684368, 0, 1)
-offset_left = 725.0
-offset_top = 184.0
-offset_right = 887.0
-offset_bottom = 344.0
-pivot_offset = Vector2(80, 80)
-mouse_filter = 2
-texture = SubResource("AtlasTexture_pio1y")
+[node name="BangParticles2" type="CPUParticles2D" parent="Node" unique_id=472247762 groups=["sell_particles"]]
+z_index = 3
+position = Vector2(837, 227)
+emitting = false
+amount = 32
+lifetime = 0.45
+one_shot = true
+explosiveness = 0.8
+emission_shape = 1
+emission_sphere_radius = 15.65
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 152.05
+initial_velocity_max = 210.53
+linear_accel_curve = SubResource("Curve_4bqqs")
+scale_amount_min = 10.0
+scale_amount_max = 10.0
+scale_amount_curve = SubResource("Curve_ynsuh")
+color = Color(1, 0.8441667, 0.45, 1)
+color_ramp = SubResource("Gradient_v7dth")
+hue_variation_min = -0.4
+hue_variation_max = 0.4
+
+[node name="BangParticles3" type="CPUParticles2D" parent="Node" unique_id=1593754678 groups=["sell_particles"]]
+z_index = 3
+position = Vector2(773, 289)
+emitting = false
+amount = 32
+lifetime = 0.45
+one_shot = true
+explosiveness = 0.8
+emission_shape = 1
+emission_sphere_radius = 15.65
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 152.05
+initial_velocity_max = 210.53
+linear_accel_curve = SubResource("Curve_4bqqs")
+scale_amount_min = 10.0
+scale_amount_max = 10.0
+scale_amount_curve = SubResource("Curve_ynsuh")
+color = Color(1, 0.8441667, 0.45, 1)
+color_ramp = SubResource("Gradient_v7dth")
+hue_variation_min = -0.4
+hue_variation_max = 0.4
+
+[node name="BangParticles4" type="CPUParticles2D" parent="Node" unique_id=296973526 groups=["sell_particles"]]
+z_index = 3
+position = Vector2(838, 290)
+emitting = false
+amount = 32
+lifetime = 0.45
+one_shot = true
+explosiveness = 0.8
+emission_shape = 1
+emission_sphere_radius = 15.65
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 152.05
+initial_velocity_max = 210.53
+linear_accel_curve = SubResource("Curve_4bqqs")
+scale_amount_min = 10.0
+scale_amount_max = 10.0
+scale_amount_curve = SubResource("Curve_ynsuh")
+color = Color(1, 0.8441667, 0.45, 1)
+color_ramp = SubResource("Gradient_v7dth")
+hue_variation_min = -0.4
+hue_variation_max = 0.4
+
+[node name="BangParticles5" type="CPUParticles2D" parent="Node" unique_id=867233105 groups=["sell_particles"]]
+z_index = 3
+position = Vector2(838, 290)
+emitting = false
+amount = 32
+lifetime = 0.45
+one_shot = true
+explosiveness = 0.8
+emission_shape = 1
+emission_sphere_radius = 15.65
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 152.05
+initial_velocity_max = 210.53
+linear_accel_curve = SubResource("Curve_4bqqs")
+scale_amount_min = 10.0
+scale_amount_max = 10.0
+scale_amount_curve = SubResource("Curve_ynsuh")
+color = Color(1, 0.8441667, 0.45, 1)
+color_ramp = SubResource("Gradient_v7dth")
+hue_variation_min = -0.4
+hue_variation_max = 0.4
 
 [node name="Message" type="CanvasLayer" parent="." unique_id=626984872]
 unique_name_in_owner = true
@@ -785,6 +882,9 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Apply and Save"
+
+[node name="StretchyButton" parent="SettingsMenu/Control/MarginContainer/VBoxContainer/PanelContainer2/VBoxContainer/ApplySoundSettingsButton" unique_id=1581072623 instance=ExtResource("10_h1jm5")]
+rotation_limits = 10.0
 
 [node name="Control3" type="Control" parent="SettingsMenu/Control/MarginContainer/VBoxContainer" unique_id=1667050424]
 custom_minimum_size = Vector2(0, 64)

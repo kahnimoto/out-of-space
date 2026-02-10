@@ -14,26 +14,25 @@ var recycle_botton_particles_position: Vector2
 @onready var round_timer: Timer = %RoundTimer
 @onready var round_timer_pg: ProgressBar = %ValueRoundTimer
 @onready var recycle_button: Button = %RecycleButton
+@onready var sell_button_animator: StretchyButton = recycle_button.get_child(0)
 @onready var shop_inventory: GridContainer = %ShopInventory
 @onready var message: CanvasLayer = %Message
 @onready var value_message: Label = %ValueMessage
 @onready var value_rounds: Label = %ValueRounds
 @onready var bang_particles: CPUParticles2D = %BangParticles
 @onready var time_label: Label = %TimeLabel
-@onready var shiny_flash: Control = %ShinyFlash
 @onready var settings_menu: CanvasLayer = $SettingsMenu
 @onready var settings_button: Button = $UI/Container/SettingsButton
 
 
 func _ready() -> void:
-	shiny_flash.show()
+	assert(sell_button_animator is StretchyButton, "Expects Stretchy button as first child of button")
 	for child in inventory_grid_container.get_children():
 		child.queue_free()
 	for _i in SLOT_COUNT:
 		var s: SlottedItem = SLOT.instantiate()
 		inventory_grid_container.add_child(s)
 		slots.append(s)
-	shiny_flash.modulate.a = 0.0
 	
 	Events.score_changed.connect(_on_score_changed)
 	Events.next_round.connect(_on_round_started)
@@ -51,12 +50,19 @@ func _ready() -> void:
 	get_tree().paused = true
 	settings_button.pressed.connect(settings_menu.show)
 
+	Events.output_slot_changed.connect(_on_outgoing_changed)
+	sell_button_animator.disable()
 
-func _modulate_flash(x:float) -> void:
-	assert(x >= 0.0 and x <= 1.0)
-	var mapped = remap(x, 0.0, 1.0, 0.0, 420.0)
-	shiny_flash.rotation_degrees = mapped
-	shiny_flash.modulate.a = FLASHBANG_CURVE.sample(x)
+func _on_outgoing_changed(_slot: OutgoingSlot) -> void:
+	var invalid := false
+	for os: OutgoingSlot in get_tree().get_nodes_in_group("outgoing_slot"):
+		invalid = invalid or not SlottedItem.item_in_category(os.item, Game.active_round.trick)
+	if invalid and not recycle_button.disabled:
+		Sounds.enable()
+		sell_button_animator.disable()
+	elif not invalid and recycle_button.disabled:
+		Sounds.disable()
+		sell_button_animator.enable()
 
 
 func _on_successfully_recycled() -> void:
@@ -65,8 +71,7 @@ func _on_successfully_recycled() -> void:
 	round_timer.start(Game.ROUND_TIME)
 	time_label.text = "Merge duplicates!"
 	Sounds.recycle()
-	create_tween().tween_method(_modulate_flash, 0.0, 1.0, 0.6)
-	#shiny_flash.
+	get_tree().get_nodes_in_group("sell_particles").map(func(p): p.emitting = true)
 
 
 func _on_items_combined(_item: SlottedItem.Items, _slot: SlottedItem) -> void:
@@ -100,7 +105,8 @@ func _on_round_started(active_round: Game.Round) -> void:
 
 func _process(_delta: float) -> void:
 	round_timer_pg.value = round_timer.time_left
-	recycle_button.disabled = Game.recycled
+	if Game.recycled and not recycle_button.disabled:
+		sell_button_animator.disable()
 	shop_inventory.get_children().map(func(n): n.modulate = Color.DARK_GREEN if Game.recycled else Color.WHITE)
 	message.visible = get_tree().paused
 
