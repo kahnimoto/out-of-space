@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bcn6c78r7cjih" path="res://ui/slot.tscn" id="3_4bqqs"]
 [ext_resource type="PackedScene" uid="uid://dvk8kr67yiqnq" path="res://ui/outgoing_slot.tscn" id="4_o00ia"]
 [ext_resource type="Texture2D" uid="uid://dwd50p15er7an" path="res://assets/items_transparent_dropshadow.png" id="5_4bqqs"]
+[ext_resource type="Texture2D" uid="uid://do3dujjujwes5" path="res://resources/textures/inventory_slot_texture.tres" id="5_pi42a"]
 [ext_resource type="Script" uid="uid://ca61pwl6g0vse" path="res://ui/tool_tips.gd" id="7_ynsuh"]
 [ext_resource type="Script" uid="uid://bck24m7hbxxya" path="res://ui/settings_menu.gd" id="8_v7dth"]
 [ext_resource type="PackedScene" uid="uid://do60o0hyttuva" path="res://ui/nodes/stretchy_button.tscn" id="10_h1jm5"]
@@ -14,6 +15,59 @@ bg_color = Color(1, 1, 1, 0.15686275)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yjl7g"]
 bg_color = Color(0.34081984, 0.687168, 0.43022972, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h1jm5"]
+texture = ExtResource("5_pi42a")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+modulate_color = Color(1, 0.658, 0.24000001, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_h1jm5"]
+load_path = "res://.godot/imported/tileset.png-c50288acd069fa293d7940a084811264.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pio1y"]
+atlas = SubResource("CompressedTexture2D_h1jm5")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_te8jg"]
+texture = SubResource("AtlasTexture_pio1y")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+modulate_color = Color(2.40685, 1.6087906, 0.63338464, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yjl7g"]
+load_path = "res://.godot/imported/tileset.png-c50288acd069fa293d7940a084811264.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7pug"]
+atlas = SubResource("CompressedTexture2D_yjl7g")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jgc46"]
+texture = SubResource("AtlasTexture_f7pug")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+modulate_color = Color(1.3262677, 0.8785013, 0.33123127, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dk0co"]
+load_path = "res://.godot/imported/tileset.png-c50288acd069fa293d7940a084811264.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pactg"]
+atlas = SubResource("CompressedTexture2D_dk0co")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ycdrs"]
+texture = SubResource("AtlasTexture_pactg")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+modulate_color = Color(0.39, 0.3198, 0.234, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v7dth"]
 
@@ -159,14 +213,10 @@ layout_mode = 2
 layout_mode = 2
 alignment = 1
 
-[node name="LabelPoints" type="Label" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/PointsContainer" unique_id=1291749300]
-layout_mode = 2
-text = "Round:"
-
 [node name="ValueRounds" type="Label" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/PointsContainer" unique_id=1015564524]
 unique_name_in_owner = true
 layout_mode = 2
-text = "1"
+text = " "
 
 [node name="Control" type="Control" parent="UI/Container/Margin/VBoxContainer/Game/Control/VBoxContainer/PointsContainer" unique_id=80392571]
 custom_minimum_size = Vector2(16, 0)
@@ -444,6 +494,10 @@ theme_override_colors/font_focus_color = Color(1, 0.7607843, 0.22745098, 1)
 theme_override_colors/font_pressed_color = Color(1, 0.87333333, 0.6, 1)
 theme_override_colors/font_hover_color = Color(1, 0.7607843, 0.22745098, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 0.7607843, 0.22745098, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_h1jm5")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_te8jg")
+theme_override_styles/hover = SubResource("StyleBoxTexture_jgc46")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ycdrs")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_v7dth")
 shortcut = SubResource("Shortcut_v7dth")
 shortcut_in_tooltip = false

@@ -53,6 +53,25 @@ func _ready() -> void:
 	Events.output_slot_changed.connect(_on_outgoing_changed)
 	sell_button_animator.disable()
 
+
+func _input(event: InputEvent) -> void:
+	if not game_locked and (event.is_action("ui_accept") or event.is_action_pressed("click")) and get_tree().paused:
+		get_tree().paused = false
+		if not Game.game_started or Game.game_completed:
+			Game.reset_game()
+			Game.new_round()
+
+
+
+func _process(_delta: float) -> void:
+	round_timer_pg.value = round_timer.time_left
+	if Game.recycled and not recycle_button.disabled:
+		sell_button_animator.disable()
+		recycle_button.disabled = true
+	shop_inventory.get_children().map(func(n): n.modulate = Color.DARK_GREEN if Game.recycled else Color.WHITE)
+	message.visible = get_tree().paused
+
+
 func _on_outgoing_changed(_slot: OutgoingSlot) -> void:
 	var invalid := false
 	for os: OutgoingSlot in get_tree().get_nodes_in_group("outgoing_slot"):
@@ -72,6 +91,7 @@ func _on_successfully_recycled() -> void:
 	time_label.text = "Merge duplicates!"
 	Sounds.recycle()
 	get_tree().get_nodes_in_group("sell_particles").map(func(p): p.emitting = true)
+	sell_button_animator.disable()
 
 
 func _on_items_combined(_item: SlottedItem.Items, _slot: SlottedItem) -> void:
@@ -89,26 +109,10 @@ func _on_game_complete() -> void:
 	game_locked = false
 
 
-func _input(event: InputEvent) -> void:
-	if not game_locked and (event.is_action("ui_accept") or event.is_action_pressed("click")) and get_tree().paused:
-		get_tree().paused = false
-		if not Game.game_started or Game.game_completed:
-			Game.reset_game()
-			Game.new_round()
-
-
 func _on_round_started(active_round: Game.Round) -> void:
 	value_rounds.text = "Round: %d - %s" % [active_round.nr, active_round.hint]
 	fill_inventory(active_round.fill, active_round.trick)
 	time_label.text = "Remove out of place!"
-
-
-func _process(_delta: float) -> void:
-	round_timer_pg.value = round_timer.time_left
-	if Game.recycled and not recycle_button.disabled:
-		sell_button_animator.disable()
-	shop_inventory.get_children().map(func(n): n.modulate = Color.DARK_GREEN if Game.recycled else Color.WHITE)
-	message.visible = get_tree().paused
 
 
 func _on_score_changed(new_value: int) -> void:
@@ -126,6 +130,7 @@ func clear_inventory() -> void:
 	slots.map(func(s: SlottedItem): 
 		s.item = SlottedItem.Items.EMPTY
 	)
+
 
 func fill_inventory(fill_category: SlottedItem.ItemCategories, trick_category: SlottedItem.ItemCategories) -> void:
 	slots.map(func(s: SlottedItem): 

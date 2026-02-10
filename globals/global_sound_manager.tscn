@@ -37,6 +37,7 @@ bus = &"SFX"
 
 [node name="AudioMerge" type="AudioStreamPlayer" parent="." unique_id=1343363297]
 stream = ExtResource("7_dp53n")
+volume_db = -5.652
 bus = &"SFX"
 
 [node name="AudioMusic" type="AudioStreamPlayer" parent="." unique_id=1412509777]
